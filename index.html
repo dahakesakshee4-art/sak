@@ -73,7 +73,7 @@
   .portrait{position:relative;width:clamp(210px,24vw,300px);aspect-ratio:1;margin-top:-14px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#DDE1E8,#B9C0CD);z-index:1}
   .portrait svg{position:absolute;inset:0;width:100%;height:100%}
   .portrait span{position:absolute;left:0;right:0;top:12%;text-align:center;font-size:.72rem;font-weight:600;color:#fff;opacity:.9}
-  .hero-sign{position:relative;z-index:2;margin-top:clamp(-72px,-6vw,-44px);margin-left:clamp(40px,8vw,120px);font-size:clamp(4.6rem,10vw,8.6rem);transform:rotate(-7deg)}
+  .hero-sign{position:relative;z-index:2;margin-top:-.08em;font-size:clamp(4.6rem,10vw,8.6rem);transform:rotate(-7deg)}
   .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:8px;flex-wrap:wrap}
   .hero-foot .small{color:var(--ink);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
   .links{display:flex;gap:18px;list-style:none;flex-wrap:wrap}
@@ -91,7 +91,7 @@
   }
 
   /* ---------- about + skills ---------- */
-  .about{display:grid;grid-template-columns:1fr minmax(220px,300px);gap:clamp(28px,6vw,80px);align-items:center}
+  .about{display:grid;grid-template-columns:1fr;gap:clamp(28px,6vw,80px);align-items:center}
   .about p{margin-top:14px}
   .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .pills li{list-style:none;border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;color:var(--ink);font-size:.8rem;line-height:1.3}
@@ -286,7 +286,7 @@
     .stage-left{order:2;text-align:center;align-items:center}
     .hero-title{font-size:clamp(2.8rem,15vw,5rem)}
     .hero-title .star{right:-6px;top:-16px;width:20px;height:20px}
-    .hero-sign{margin-left:0;font-size:5.2rem;margin-top:-50px}
+    .hero-sign{font-size:5.2rem;margin-top:-6px}
     .sheet.soft{padding-top:40px}
     .hero-foot{justify-content:center;text-align:center}
     .about{grid-template-columns:1fr}
@@ -311,13 +311,6 @@
   .portrait img,.photo img,.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;z-index:1}
   .shot{position:relative;overflow:hidden}
 </style>
-<script>
-  function imgFail(el){
-    const exts=[".png",".jpeg",".webp"]; const i=+(el.dataset.i||0);
-    if(i<exts.length){el.dataset.i=i+1; el.src=el.src.replace(/\.(jpg|png|jpeg|webp)$/i,exts[i]);}
-    else el.remove();
-  }
-</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -357,15 +350,6 @@
       <div class="stage-center">
         <h1 class="sr-only">Sakshee Dahake, digital strategy, social media and content</h1>
         <p class="display hero-title" aria-hidden="true">Digital strategy<svg class="star"><use href="#star"/></svg></p>
-
-        <div class="portrait">
-          <img src="images/portrait.jpg" alt="Sakshee Dahake" onerror="imgFail(this)">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <circle cx="50" cy="40" r="15" fill="#F1F3F6" opacity=".85"/>
-            <path d="M8 104c0-26 18-40 42-40s42 14 42 40z" fill="#F1F3F6" opacity=".85"/>
-          </svg>
-          <span>Your photo</span>
-        </div>
         <p class="script hero-sign" aria-hidden="true">Sakshee</p>
       </div>
     </div>
@@ -393,11 +377,6 @@
           <li><b>30-day</b>content plans</li>
           <li><b>Audit</b>to execution</li>
         </ul>
-      </div>
-      <div class="photo">
-        <img src="images/photo-2.jpg" alt="Sakshee Dahake" onerror="imgFail(this)">
-        <span>Second photo</span>
-        <svg class="star"><use href="#star"/></svg>
       </div>
     </div>
   </section>
@@ -678,42 +657,42 @@
     </div>
         <ul class="proof-grid">
       <li><a class="card-link" href="content-calendar.html">
-        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">days</span><span class="cb-script">Plan</span><img src="images/proof-1.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">days</span><span class="cb-script">Plan</span></div>
         <h3>Content calendar <span aria-hidden="true">→</span></h3><p>A month of posts planned by pillar and format.</p>
         <span class="card-foot"><span class="open">Open calendar</span></span>
       </a></li>
       <li><a class="card-link" href="competitor-analysis.html">
-        <div class="shot shot-cb"><span class="cb-num">4</span><span class="cb-label">archetypes</span><span class="cb-script">Gaps</span><img src="images/proof-2.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num">4</span><span class="cb-label">archetypes</span><span class="cb-script">Gaps</span></div>
         <h3>Competitor analysis <span aria-hidden="true">→</span></h3><p>How similar brands post, and the gaps they leave.</p>
         <span class="card-foot"><span class="open">Open analysis</span></span>
       </a></li>
       <li><a class="card-link" href="positioning-framework.html">
-        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Frame</span><span class="cb-label">NOIR</span><span class="cb-script">Position</span><img src="images/proof-3.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Frame</span><span class="cb-label">NOIR</span><span class="cb-script">Position</span></div>
         <h3>Positioning framework <span aria-hidden="true">→</span></h3><p>Audience, need, promise and proof on one page.</p>
         <span class="card-foot"><span class="open">Open framework</span></span>
       </a></li>
       <li><a class="card-link" href="reel-storyboard.html">
-        <div class="shot shot-cb"><span class="cb-num">8</span><span class="cb-label">shots</span><span class="cb-script">Roll</span><img src="images/proof-4.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num">8</span><span class="cb-label">shots</span><span class="cb-script">Roll</span></div>
         <h3>Reel storyboard <span aria-hidden="true">→</span></h3><p>Shot list, on-screen text and audio notes.</p>
         <span class="card-foot"><span class="open">Open storyboard</span></span>
       </a></li>
       <li><a class="card-link" href="caption-bank.html">
-        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">captions</span><span class="cb-script">Noir</span><img src="images/proof-5.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">captions</span><span class="cb-script">Noir</span></div>
         <h3>Caption bank <span aria-hidden="true">→</span></h3><p>Captions grouped by tone and call to action.</p>
         <span class="card-foot"><span class="open">Open caption bank</span></span>
       </a></li>
       <li><a class="card-link" href="canva-designs.html">
-        <div class="shot shot-cb"><span class="cb-num">5</span><span class="cb-label">slides</span><span class="cb-script">Noir</span><img src="images/proof-6.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num">5</span><span class="cb-label">slides</span><span class="cb-script">Noir</span></div>
         <h3>Canva designs <span aria-hidden="true">→</span></h3><p>Carousel and story templates in a brand style.</p>
         <span class="card-foot"><span class="open">Open designs</span></span>
       </a></li>
       <li><a class="card-link" href="social-media-audit.html">
-        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Audit</span><span class="cb-label">Elephant &amp; Co.</span><span class="cb-script">Fix it</span><img src="images/proof-7.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Audit</span><span class="cb-label">Elephant &amp; Co.</span><span class="cb-script">Fix it</span></div>
         <h3>Social media audit <span aria-hidden="true">→</span></h3><p>Feed review with problems and quick fixes.</p>
         <span class="card-foot"><span class="open">Open audit</span></span>
       </a></li>
       <li><a class="card-link" href="campaign-brief.html">
-        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Brief</span><span class="cb-label">NOIR</span><span class="cb-script">After dark</span><img src="images/proof-8.jpg" alt="" onerror="imgFail(this)"></div>
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Brief</span><span class="cb-label">NOIR</span><span class="cb-script">After dark</span></div>
         <h3>Campaign brief <span aria-hidden="true">→</span></h3><p>Objective, audience, idea and deliverables.</p>
         <span class="card-foot"><span class="open">Open brief</span></span>
       </a></li>
