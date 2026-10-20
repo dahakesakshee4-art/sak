@@ -24,8 +24,8 @@
   a{color:inherit}
   :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
   p{max-width:62ch}
-  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap)}
+  .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
   .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
   .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
   .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
@@ -51,7 +51,7 @@
   .title .script{display:block;width:max-content;margin:-.12em 0 0 .9em;font-size:.62em;text-transform:none;transform:rotate(-6deg);letter-spacing:0}
   .intro .lead{margin-top:22px}
   .note{display:inline-flex;margin-top:16px;font-size:.78rem;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px}
-  .stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stats{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
   .stats li{border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.82rem;box-shadow:3px 4px 0 var(--line);background:var(--paper)}
   .stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
   .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;grid-column:1/-1}
@@ -85,9 +85,9 @@
   .pill{font-size:.7rem;font-weight:600;border-radius:999px;padding:2px 9px;border:1.5px solid var(--ink);color:var(--ink)}
 
   .cardgrid{display:grid;gap:14px;margin-top:24px}
-  .cols4{grid-template-columns:repeat(4,1fr)}
-  .cols3{grid-template-columns:repeat(3,1fr)}
-  .cols2{grid-template-columns:repeat(2,1fr)}
+  .cols4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cols3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
   .box{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:16px;box-shadow:3px 4px 0 var(--line)}
   .box h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;line-height:1;letter-spacing:.02em;padding-bottom:10px;margin-bottom:10px;border-bottom:1.5px solid var(--line)}
   .box p{font-size:.84rem;line-height:1.5;margin-top:8px}
@@ -95,7 +95,7 @@
   .box li{font-size:.82rem;color:var(--ink);background:#EEF1F5;border-radius:4px;padding:5px 8px;line-height:1.35}
   .num{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--ink)}
 
-  .more{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+  .more{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:22px}
   .more a{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:.86rem;border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;background:var(--paper);box-shadow:3px 4px 0 var(--line)}
   .more a:hover{color:var(--wine);border-color:var(--wine)}
   .more small{display:block;font-weight:500;font-size:.74rem;color:var(--slate);margin-top:2px}
@@ -103,22 +103,22 @@
   footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   @media (max-width:1000px){
-    .cols4{grid-template-columns:repeat(2,1fr)}
-    .cols3{grid-template-columns:repeat(2,1fr)}
-    .more{grid-template-columns:repeat(2,1fr)}
-    .row{grid-template-columns:1fr}
+    .cols4{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cols3{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .more{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .row{grid-template-columns:minmax(0,1fr)}
   }
   @media (max-width:760px){
-    .intro{grid-template-columns:1fr}
+    .intro{grid-template-columns:minmax(0,1fr)}
     .nav .me{display:none}
     .count{margin-left:0;width:100%}
   }
   @media (max-width:560px){
-    .cols4,.cols3,.cols2,.more{grid-template-columns:1fr}
+    .cols4,.cols3,.cols2,.more{grid-template-columns:minmax(0,1fr)}
   }
 
 
-  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
   .facts div{border-left:3px solid var(--wine);padding-left:12px}
   .facts dt{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--wine)}
   .facts dd{color:var(--ink);font-weight:600;font-size:.92rem;margin-top:2px}
@@ -137,8 +137,33 @@
   .checks2 li::before{content:"✓";position:absolute;left:0;color:var(--wine);font-weight:700}
   .kpis li{display:grid;gap:2px;padding:10px 0;border-top:1px solid var(--line);font-size:.86rem}
   .kpis b{color:var(--ink)}
-  @media (max-width:1000px){.facts{grid-template-columns:1fr 1fr}}
-  @media (max-width:560px){.facts{grid-template-columns:1fr}.phases li{grid-template-columns:1fr;gap:2px}}
+  @media (max-width:1000px){.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+  @media (max-width:560px){.facts{grid-template-columns:minmax(0,1fr)}.phases li{grid-template-columns:minmax(0,1fr);gap:2px}}
+/* mobile hardening */
+  html{-webkit-text-size-adjust:100%}
+  img,svg,video{max-width:100%}
+  @media (max-width:760px){
+    .title{font-size:clamp(2.5rem,12.5vw,5rem);overflow-wrap:anywhere}
+    .sheet{padding:22px 18px}
+    .stats b{font-size:1.7rem}
+    .btn{padding:12px 18px}
+    .textlink{display:inline-block;padding:6px 0}
+    .more a{padding:14px}
+  }
+  @media (max-width:560px){
+    .shots{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .shotc{padding:8px}
+    .frame{padding:9px}
+    .vis{font-size:.68rem}
+    .os{font-size:.9rem}
+    .bar{height:44px}
+    .pt{max-width:84px}
+    .pt em{font-size:.62rem}
+    .map{margin-top:30px}
+    .chip{padding:8px 14px}
+    .copy{padding:8px 14px}
+  }
+  .head-title{min-width:0}.h2{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
