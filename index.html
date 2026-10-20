@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakshee Dahake | Digital Strategy, Social Media & Content</title>
+<meta name="description" content="Portfolio of Sakshee Dahake: brand positioning, social media strategy and content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A4B;        /* navy headings + brief boxes */
+    --wine:#7C1D22;       /* script + star accent */
+    --paper:#FFFFFF;
+    --mist:#E1E5EB;       /* page background between sheets */
+    --slate:#566079;      /* body copy */
+    --line:#C9D0DC;
+    --gap:clamp(12px,1.6vw,20px);
+    --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+    --script:"Mrs Saint Delafield","Brush Script MT",cursive;
+    --body:"Montserrat",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--slate);background:var(--mist);-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:10;text-decoration:none}
+  .skip:focus{top:12px}
+
+  /* ---------- board of sheets ---------- */
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
+  .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
+  .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--ink)}
+  .sheet .dots.right{left:auto;right:18px}
+
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);line-height:.92;letter-spacing:-.005em}
+  .h2{font-size:clamp(2.6rem,5.2vw,4.3rem)}
+  .h3{font-size:clamp(1.5rem,2.4vw,2rem)}
+  .script{font-family:var(--script);font-weight:400;color:var(--wine);line-height:1}
+  .star{width:26px;height:26px;color:var(--wine);flex:none}
+  p{max-width:62ch}
+  .lead{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .small{font-size:.82rem;line-height:1.5}
+
+  /* tags that tell the reader what kind of work it is */
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+  .tag.concept{color:var(--ink)}
+  .tag.spec{color:var(--wine)}
+  .tag.real{color:#fff;background:var(--ink);border-color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:22px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav .me{font-weight:700;letter-spacing:.18em;font-size:.9rem}
+  .nav ul{display:flex;list-style:none;gap:clamp(16px,3.6vw,56px)}
+  .nav ul a{padding:6px 0;border-bottom:1.5px solid transparent}
+  .nav ul a:hover{border-color:var(--wine)}
+
+  .stage{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;margin-top:clamp(28px,4vw,48px)}
+  .stage-left{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding-top:6px}
+  .stage-left .lead{font-size:1.06rem}
+  .stage-center{position:relative;display:flex;flex-direction:column;align-items:center}
+  .hero-title{position:relative;font-size:clamp(3rem,8vw,6.8rem);text-align:center}
+  .hero-title .star{position:absolute;top:-4px;right:-34px;width:30px;height:30px}
+  .portrait{position:relative;width:clamp(210px,24vw,300px);aspect-ratio:1;margin-top:-14px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#DDE1E8,#B9C0CD);z-index:1}
+  .portrait svg{position:absolute;inset:0;width:100%;height:100%}
+  .portrait span{position:absolute;left:0;right:0;top:12%;text-align:center;font-size:.72rem;font-weight:600;color:#fff;opacity:.9}
+  .hero-sign{position:relative;z-index:2;margin-top:clamp(-72px,-6vw,-44px);margin-left:clamp(40px,8vw,120px);font-size:clamp(4.6rem,10vw,8.6rem);transform:rotate(-7deg)}
+  .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:8px;flex-wrap:wrap}
+  .hero-foot .small{color:var(--ink);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .links{display:flex;gap:18px;list-style:none;flex-wrap:wrap}
+  .links a{font-size:.82rem;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
+  .links a:hover{color:var(--wine);border-color:var(--wine)}
+
+  /* one orchestrated load moment */
+  @media (prefers-reduced-motion:no-preference){
+    .hero-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+    .portrait{animation:settle .9s .15s cubic-bezier(.2,.7,.2,1) both}
+    .hero-sign{animation:sign 1.4s .6s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes settle{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+    @keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% 0 0)}}
+  }
+
+  /* ---------- about + skills ---------- */
+  .about{display:grid;grid-template-columns:1fr minmax(220px,300px);gap:clamp(28px,6vw,80px);align-items:center}
+  .about p{margin-top:14px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .pills li{list-style:none;border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;color:var(--ink);font-size:.8rem;line-height:1.3}
+  .pills b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem;letter-spacing:.01em}
+  .photo{position:relative;aspect-ratio:4/5;border-radius:4px;background:linear-gradient(165deg,#D3D8E1,#AEB6C4)}
+  .photo span{position:absolute;inset:auto 0 14px;text-align:center;font-size:.72rem;font-weight:600;color:#fff}
+  .photo .star{position:absolute;right:-10px;bottom:-10px;width:32px;height:32px;background:var(--paper);border-radius:50%;padding:4px}
+
+  .skills-head{display:flex;align-items:center;gap:12px}
+  .skill-rows{margin-top:28px;display:grid;gap:10px}
+  .skill-row{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:stretch}
+  .skill-row h3{background:var(--ink);color:#fff;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.45rem;letter-spacing:.03em;line-height:1;border-radius:6px;padding:16px 18px;display:flex;align-items:center}
+  .skill-row:nth-child(even) h3{background:var(--wine)}
+  .skill-row ul{list-style:none;display:flex;flex-wrap:wrap;align-content:center;gap:8px;padding:8px 0}
+  .skill-row li{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;color:var(--ink);font-size:.82rem;font-weight:500;line-height:1.3;box-shadow:2px 3px 0 var(--line)}
+
+  /* ---------- approach ---------- */
+  .approach-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:30px;list-style:none;counter-reset:s}
+  .steps li{position:relative;padding:0 18px 0 0}
+  .steps li::before{counter-increment:s;content:counter(s);display:block;font-family:var(--script);font-size:3rem;color:var(--wine);line-height:.8;height:40px}
+  .steps li::after{content:"";position:absolute;left:34px;right:14px;top:18px;height:1.5px;background:var(--line)}
+  .steps li:last-child::after{display:none}
+  .steps h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.35rem;letter-spacing:.01em;margin-top:8px}
+  .steps p{font-size:.84rem;margin-top:4px}
+
+  .legend{display:grid;grid-template-columns:auto 1fr 1fr;gap:18px 26px;align-items:start;margin-top:34px;padding-top:24px;border-top:1.5px solid var(--line)}
+  .legend h3{color:var(--ink);font-size:.95rem;font-weight:700;line-height:1.3;max-width:14ch}
+  .legend p{font-size:.82rem;margin-top:8px}
+
+  /* ---------- case studies ---------- */
+  .case-head{display:grid;grid-template-columns:auto 1fr;gap:10px 32px;align-items:end}
+  .case-head .num{color:var(--wine);font-weight:600;font-size:.85rem}
+  .case-head .meta{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding-bottom:4px}
+  .case-head .meta p{color:var(--ink);font-size:.9rem}
+  .brand-name{color:var(--ink);font-weight:700}
+
+  .brief{background:var(--ink);color:#E6E9F1;border-radius:4px;padding:22px 22px 24px}
+  .brief + .brief{margin-top:12px}
+  .brief h3{color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+  .brief p{font-size:.9rem}
+  .brief blockquote{font-size:1rem;color:#fff;line-height:1.5;border-left:2px solid #B5485A;padding-left:12px}
+
+  .c01{display:grid;grid-template-columns:5fr 7fr;gap:26px;margin-top:28px}
+  .c01-visual{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;align-items:start}
+  .ig{border:1.5px solid var(--line);border-radius:6px;padding:14px;background:#FAFAFB}
+  .ig-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .ig-av{width:46px;height:46px;border-radius:50%;background:#1A1614;color:#EDE6DC;display:grid;place-items:center;font-weight:700;letter-spacing:.1em;font-size:.8rem}
+  .ig-top b{display:block;color:#1A1614;font-size:.85rem}
+  .ig-top span{font-size:.72rem}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+  .t{aspect-ratio:4/5;display:grid;place-items:center;text-align:center;padding:6px;font-size:.62rem;font-weight:600;letter-spacing:.04em;overflow:hidden;position:relative}
+  .t.esp{background:#1A1614;color:#EDE6DC}
+  .t.milk{background:#C9B8A6;color:#1A1614}
+  .t.crema{background:#8A5A3B;color:#F4ECE2}
+  .t.pap{background:#EDE6DC;color:#1A1614}
+  .t .word{font-size:1rem;letter-spacing:.35em;font-weight:500;padding-left:.35em}
+  .t .cup{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#C9B8A6 0 38%,#8A5A3B 39% 58%,#EDE6DC 59% 64%,transparent 65%)}
+  .t .moon{width:22px;height:22px;border-radius:50%;box-shadow:inset -6px 2px 0 #EDE6DC;margin:0 auto 6px}
+  .vd h3{color:var(--ink);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .vd + .vd{margin-top:20px}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .sw div{border-radius:4px;height:54px;padding:6px 8px;font-size:.66rem;font-weight:600;display:flex;align-items:flex-end}
+  .words{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;list-style:none}
+  .words li{font-size:.78rem;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:3px 10px}
+  .deliver{margin-top:10px;list-style:none;font-size:.84rem;color:var(--ink)}
+  .deliver li{padding:5px 0;border-bottom:1px solid var(--line)}
+
+  /* case 02 flow */
+  .flow{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:28px}
+  .block{border:1.5px solid var(--line);border-radius:6px;padding:20px}
+  .block .stage-name{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+  .block .stage-name b{font-family:var(--script);color:var(--wine);font-size:2.2rem;font-weight:400;line-height:.6}
+  .block .stage-name h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;letter-spacing:.02em}
+  .b-before{grid-column:span 5}
+  .b-insight{grid-column:span 7;background:var(--ink);border-color:var(--ink)}
+  .b-insight .stage-name h3{color:#fff}
+  .b-insight .stage-name b{color:#E08B98}
+  .b-insight p.big{font-family:var(--display);text-transform:uppercase;color:#fff;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.02;max-width:22ch}
+  .b-strategy{grid-column:span 12}
+  .b-exec{grid-column:span 7}
+  .b-measure{grid-column:span 5}
+  .def dt{color:var(--ink);font-weight:700;font-size:.8rem;margin-top:10px}
+  .def dd{font-size:.88rem}
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+  .pillar{border-radius:4px;padding:14px 16px;color:#fff}
+  .pillar strong{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;line-height:1}
+  .pillar span{font-size:.8rem;line-height:1.4;display:block;margin-top:6px;opacity:.92}
+  .p-cul{background:var(--ink)}
+  .p-peo{background:var(--wine)}
+  .p-pro{background:#6E7892}
+  .p-exp{background:#B79A8A}
+  .exec{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .exec ul{list-style:none;font-size:.86rem;color:var(--ink)}
+  .exec li{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .exec li b{min-width:20px;font-weight:700;color:var(--wine)}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+  .cal i{aspect-ratio:1;border-radius:2px}
+  .cal-key{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:10px;font-size:.7rem}
+  .cal-key span{display:inline-flex;align-items:center;gap:5px}
+  .cal-key span::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c)}
+  .funnel{list-style:none;display:grid;gap:6px;margin-top:4px}
+  .funnel li{background:var(--ink);color:#fff;font-size:.8rem;font-weight:600;padding:9px 12px;border-radius:3px;margin:0 auto;text-align:center}
+  .funnel li:nth-child(1){width:100%}
+  .funnel li:nth-child(2){width:84%;background:#3A4668}
+  .funnel li:nth-child(3){width:68%;background:#5A3050}
+  .funnel li:nth-child(4){width:52%;background:var(--wine)}
+  .note{font-size:.8rem;margin-top:14px}
+
+  /* case 03 phones + case 04 timeline */
+  .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  .phone{aspect-ratio:9/17;border:6px solid #E7EAF0;outline:1.5px solid var(--ink);border-radius:22px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px}
+  .phone::before{content:"";position:absolute;top:6px;left:50%;width:34%;height:6px;border-radius:6px;background:#E7EAF0;transform:translateX(-50%)}
+  .phone span{position:relative;color:#fff;font-size:.72rem;font-weight:600;line-height:1.3}
+  .ph1{background:linear-gradient(180deg,#2F3E6B 0%,#1C2644 100%)}
+  .ph2{background:repeating-linear-gradient(90deg,#9C3B2E 0 6px,#B4513F 6px 12px)}
+  .ph3{background:linear-gradient(180deg,#D9A441 0%,#8E5E1E 100%)}
+  .scene{font-size:.76rem;margin-top:8px;line-height:1.4}
+  .phases{list-style:none;margin-top:18px;display:grid;gap:8px}
+  .phases li{display:grid;grid-template-columns:86px 1fr;gap:12px;font-size:.86rem;padding:10px 0;border-top:1px solid var(--line)}
+  .phases b{color:var(--ink)}
+  .caption{margin-top:16px;border-left:2px solid var(--wine);padding:4px 0 4px 14px;color:var(--ink);font-size:.9rem;font-style:italic}
+
+  .timeline{list-style:none;margin-top:22px;position:relative}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:30px;width:1.5px;background:var(--line)}
+  .timeline li{position:relative;padding:0 0 18px 32px}
+  .timeline li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--wine)}
+  .timeline b{display:block;color:var(--ink);font-size:.9rem}
+  .timeline p{font-size:.86rem}
+  .channels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+  .channels div{border:1.5px solid var(--line);border-radius:6px;padding:10px 12px;font-size:.8rem;line-height:1.4}
+  .channels strong{display:block;color:var(--ink);font-size:.84rem}
+
+  /* ---------- proof of work ---------- */
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;list-style:none}
+  .shot{aspect-ratio:4/3;border-radius:4px;border:1.5px dashed #9AA3B8;background:repeating-linear-gradient(-45deg,#F3F5F8 0 10px,#ECEFF4 10px 20px);display:grid;place-items:center;color:#7A849B;font-size:.74rem;font-weight:600}
+  .proof-grid h3{color:var(--ink);font-size:.9rem;font-weight:700;margin-top:10px}
+  .proof-grid p{font-size:.8rem;line-height:1.45}
+  .proof-grid .tag{margin-top:8px}
+
+  .card-link{display:block;text-decoration:none;color:inherit}
+  .card-link .shot{transition:transform .25s ease}
+  .card-link:hover .shot{transform:translateY(-3px)}
+  .card-link:hover h3{color:var(--wine)}
+  .card-foot{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+  .card-link .open{display:inline-block;font-size:.78rem;font-weight:600;color:var(--wine);border-bottom:1.5px solid var(--wine)}
+  .shot-cb{background:var(--ink);border:0;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;position:relative}
+  .cb-num{font-family:var(--display);font-size:3.4rem;line-height:.9;font-weight:400}
+  .cb-label{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;font-weight:400}
+  .cb-script{position:absolute;right:12%;bottom:10%;font-family:var(--script);color:#E08B98;font-size:2.2rem;transform:rotate(-8deg);line-height:1}
+  /* ---------- tools + contact ---------- */
+  .tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+  .tool-group{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:18px 18px 20px;box-shadow:3px 4px 0 var(--line)}
+  .tool-group h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.2rem;line-height:1.05;letter-spacing:.02em;padding-bottom:10px;margin-bottom:12px;border-bottom:1.5px solid var(--line)}
+  .tool-group ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+  .tool-group li{font-size:.78rem;font-weight:500;color:var(--ink);background:#EEF1F5;border-radius:999px;padding:4px 10px;line-height:1.35}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+  .contact-grid > div:first-child{position:sticky;top:24px}
+  .faq-h{color:var(--ink);font-size:.95rem;font-weight:700;margin-bottom:10px}
+  details[open] summary{color:var(--wine)}
+  .faq details:first-of-type{margin-top:0}
+  .contact-title{display:flex;align-items:flex-end;flex-wrap:wrap;gap:0 14px}
+  .contact-title .script{font-size:clamp(3rem,6vw,4.6rem);margin-bottom:-6px}
+  .btn{display:inline-block;margin-top:20px;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:13px 22px;border-radius:999px}
+  .btn:hover{background:#63161B}
+  .contact .links{margin-top:18px}
+  details{border-top:1px solid var(--line);padding:12px 0}
+  details:first-of-type{margin-top:22px}
+  summary{cursor:pointer;color:var(--ink);font-weight:600;font-size:.88rem;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.1rem;line-height:1;color:var(--wine)}
+  details[open] summary::after{content:"−"}
+  details p{font-size:.85rem;margin-top:8px}
+
+  footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;color:var(--slate);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .steps{grid-template-columns:repeat(3,1fr);row-gap:24px}
+    .steps li:nth-child(3)::after{display:none}
+    .legend{grid-template-columns:1fr 1fr}
+    .legend h3{grid-column:1/-1;max-width:none}
+    .c01{grid-template-columns:1fr}
+    .proof-grid{grid-template-columns:repeat(2,1fr)}
+    .tool-grid{grid-template-columns:repeat(2,1fr)}
+    .b-before,.b-insight,.b-exec,.b-measure{grid-column:span 12}
+  }
+  @media (max-width:860px){
+    .row{grid-template-columns:1fr}
+    .nav ul{display:none}
+    .stage{grid-template-columns:1fr}
+    .stage-left{order:2;text-align:center;align-items:center}
+    .hero-title{font-size:clamp(2.8rem,15vw,5rem)}
+    .hero-title .star{right:-6px;top:-16px;width:20px;height:20px}
+    .hero-sign{margin-left:0;font-size:5.2rem;margin-top:-50px}
+    .sheet.soft{padding-top:40px}
+    .hero-foot{justify-content:center;text-align:center}
+    .about{grid-template-columns:1fr}
+    .photo{max-width:300px}
+    .case-head{grid-template-columns:1fr}
+    .pillars{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .contact-grid > div:first-child{position:static}
+  }
+  @media (max-width:560px){
+    .steps{grid-template-columns:1fr 1fr}
+    .steps li::after{display:none}
+    .legend{grid-template-columns:1fr}
+    .c01-visual,.exec,.channels{grid-template-columns:1fr}
+    .skill-row{grid-template-columns:1fr;gap:8px}
+    .skill-row h3{font-size:1.25rem;padding:12px 14px}
+    .proof-grid{grid-template-columns:1fr}
+    .tool-grid{grid-template-columns:1fr}
+    .phones{gap:8px}
+  }
+  /* auto-loaded photos sit on top of the placeholders */
+  .portrait img,.photo img,.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;z-index:1}
+  .shot{position:relative;overflow:hidden}
+</style>
+<script>
+  function imgFail(el){
+    const exts=[".png",".jpeg",".webp"]; const i=+(el.dataset.i||0);
+    if(i<exts.length){el.dataset.i=i+1; el.src=el.src.replace(/\.(jpg|png|jpeg|webp)$/i,exts[i]);}
+    else el.remove();
+  }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Reusable accent star -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 32 32">
+    <g fill="currentColor">
+      <circle cx="16" cy="16" r="6"/>
+      <path d="M16 1l2 8h-4zM16 31l-2-8h4zM1 16l8-2v4zM31 16l-8 2v-4zM5.4 5.4l7 4.3-2.8 2.8zM26.6 26.6l-7-4.3 2.8-2.8zM26.6 5.4l-4.3 7-2.8-2.8zM5.4 26.6l4.3-7 2.8 2.8z"/>
+    </g>
+  </symbol>
+</svg>
+
+<main class="board" id="main">
+
+  <!-- ===================== COVER ===================== -->
+  <header class="sheet hero" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="me" href="#top">Sakshee Dahake</a>
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#proof">Proof of work</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="stage">
+      <div class="stage-left">
+        <p class="lead">I turn audience insight into social strategy and content people actually stop for.</p>
+        <p class="small">Digital strategy, social media and content</p>
+      </div>
+
+      <div class="stage-center">
+        <h1 class="sr-only">Sakshee Dahake, digital strategy, social media and content</h1>
+        <p class="display hero-title" aria-hidden="true">Digital strategy<svg class="star"><use href="#star"/></svg></p>
+
+        <div class="portrait">
+          <img src="images/portrait.jpg" alt="Sakshee Dahake" onerror="imgFail(this)">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="50" cy="40" r="15" fill="#F1F3F6" opacity=".85"/>
+            <path d="M8 104c0-26 18-40 42-40s42 14 42 40z" fill="#F1F3F6" opacity=".85"/>
+          </svg>
+          <span>Your photo</span>
+        </div>
+        <p class="script hero-sign" aria-hidden="true">Sakshee</p>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <p class="small">Open to roles and freelance projects</p>
+      <ul class="links">
+        <li><a href="#" data-link="linkedin">LinkedIn</a></li>
+        <li><a href="#" data-link="instagram">Instagram</a></li>
+        <li><a href="#" data-link="behance">Behance</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="sheet soft" aria-labelledby="about-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="about">
+      <div>
+        <h2 class="display h2" id="about-h">About me</h2>
+        <p>I'm Sakshee, a digital strategist working across social media, content and brand positioning. I start with the audience, find the insight worth building on, and turn it into content systems a team can actually run.</p>
+        <p>This portfolio shows how I think: the audit, the insight, the plan and the work that comes out of it.</p>
+        <ul class="pills">
+          <li><b>4</b>case studies</li>
+          <li><b>30-day</b>content plans</li>
+          <li><b>Audit</b>to execution</li>
+        </ul>
+      </div>
+      <div class="photo">
+        <img src="images/photo-2.jpg" alt="Sakshee Dahake" onerror="imgFail(this)">
+        <span>Second photo</span>
+        <svg class="star"><use href="#star"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="sheet" id="skills" aria-labelledby="skills-h">
+    <span class="dots right" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="approach-head">
+      <div class="skills-head">
+        <svg class="star"><use href="#star"/></svg>
+        <h2 class="display h2" id="skills-h">Skills</h2>
+      </div>
+      <p class="lead">Social media and digital marketing, from the first audit to the final report.</p>
+    </div>
+    <div class="skill-rows">
+      <div class="skill-row">
+        <h3>Strategy</h3>
+        <ul><li>Social Media Strategy</li><li>Instagram Strategy</li><li>Brand Positioning</li><li>Audience Research</li><li>Competitor Analysis</li><li>Social Media Audits</li><li>Content Strategy</li></ul>
+      </div>
+      <div class="skill-row">
+        <h3>Content</h3>
+        <ul><li>Content Calendars</li><li>Reels Strategy</li><li>Short-Form Video</li><li>Copywriting</li><li>Storytelling</li><li>Creative Direction</li><li>UGC</li><li>Trend Research</li><li>Community Building</li></ul>
+      </div>
+      <div class="skill-row">
+        <h3>Growth</h3>
+        <ul><li>Organic Growth</li><li>Engagement Strategy</li><li>Influencer Marketing</li><li>Creator Partnerships</li><li>Lead Generation</li><li>Paid Social</li><li>Meta Ads</li><li>Campaign Strategy</li><li>A/B Testing</li></ul>
+      </div>
+      <div class="skill-row">
+        <h3>Analytics</h3>
+        <ul><li>Instagram Insights</li><li>KPI Tracking</li><li>Performance Analysis</li><li>Engagement Rate</li><li>Reach &amp; Impressions</li><li>Follower Growth</li><li>Campaign Reporting</li><li>Google Analytics 4</li><li>Excel</li></ul>
+      </div>
+      <div class="skill-row">
+        <h3>Tools</h3>
+        <ul><li>Canva</li><li>CapCut</li><li>Adobe Creative Suite</li><li>Meta Business Suite</li><li>Google Analytics</li><li>Google Sheets</li><li>Notion</li><li>ChatGPT</li></ul>
+      </div>
+      <div class="skill-row">
+        <h3>Marketing</h3>
+        <ul><li>Consumer Psychology</li><li>Marketing Funnels</li><li>Customer Journey</li><li>CAC</li><li>CTR</li><li>CPC</li><li>CPM</li><li>ROAS</li><li>Conversion Rate</li><li>ROI</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STRATEGIC APPROACH ===================== -->
+  <section class="sheet" id="approach" aria-labelledby="approach-h">
+    <div class="approach-head">
+      <h2 class="display h2" id="approach-h">How I work</h2>
+      <p class="lead">Every project here follows the same path, so you can see the reasoning behind each piece of content.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Audit</h3><p>Review the current feed, competitors and audience conversations.</p></li>
+      <li><h3>Insight</h3><p>Find what the audience is really buying into.</p></li>
+      <li><h3>Strategy</h3><p>Set positioning and the content pillars that carry it.</p></li>
+      <li><h3>Execution</h3><p>Reels, carousels, captions, stories and a calendar.</p></li>
+      <li><h3>Measurement</h3><p>Decide what success looks like before posting.</p></li>
+    </ol>
+
+    <div class="legend">
+      <h3>Reading this portfolio</h3>
+      <div><span class="tag concept">Concept</span><p>A fictional brand I built from zero to show positioning and launch thinking.</p></div>
+      <div><span class="tag spec">Speculative</span><p>A real brand, used as a case study. Not commissioned by the brand.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== CASE 01: BRAND POSITIONING ===================== -->
+  <section class="sheet" id="work" aria-labelledby="c01-h">
+    <div class="case-head">
+      <div>
+        <p class="num">Case study 01</p>
+        <h2 class="display h2" id="c01-h">Brand positioning</h2>
+      </div>
+      <div class="meta">
+        <span class="tag concept">Concept project</span>
+        <p><span class="brand-name">NOIR</span>, a concept café brand. Positioning, audience, visual direction, Instagram strategy and launch campaign.</p>
+      </div>
+    </div>
+
+    <div class="c01">
+      <div>
+        <div class="brief">
+          <h3>The problem</h3>
+          <p>A new café in a city full of good coffee needs a reason to be chosen, not just found.</p>
+        </div>
+        <div class="brief">
+          <h3>Positioning</h3>
+          <blockquote>For young professionals who work and unwind in cafés, NOIR is the late-evening coffee bar that feels like a quiet night out, without the noise.</blockquote>
+        </div>
+        <div class="brief">
+          <h3>Audience</h3>
+          <p>22 to 30, remote workers and postgraduate students who want a third place after 7pm that isn't a bar.</p>
+        </div>
+      </div>
+
+      <div class="c01-visual">
+        <div class="ig" aria-label="Instagram grid mockup for NOIR">
+          <div class="ig-top">
+            <div class="ig-av">NOIR</div>
+            <div><b>noir.concept</b><span>Coffee after dark. Slow pours, soft lights.</span></div>
+          </div>
+          <div class="ig-grid">
+            <div class="t esp"><span class="word">NOIR</span></div>
+            <div class="t pap"><span class="cup"></span></div>
+            <div class="t milk">Slow pour,<br>late hours</div>
+            <div class="t crema">This week's<br>menu drop</div>
+            <div class="t esp"><span><span class="moon"></span>Open till 1am</span></div>
+            <div class="t pap">People of<br>NOIR</div>
+            <div class="t milk">Reserve<br>a corner</div>
+            <div class="t crema">Friday<br>listening sessions</div>
+            <div class="t esp">Behind<br>the bar</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="vd">
+            <h3>Visual direction</h3>
+            <div class="sw">
+              <div style="background:#1A1614;color:#EDE6DC">Espresso</div>
+              <div style="background:#8A5A3B;color:#F4ECE2">Crema</div>
+              <div style="background:#C9B8A6;color:#1A1614">Steamed milk</div>
+              <div style="background:#EDE6DC;color:#1A1614;border:1px solid #D7CDBF">Paper</div>
+            </div>
+          </div>
+          <div class="vd">
+            <h3>Personality</h3>
+            <ul class="words"><li>Unhurried</li><li>Moody</li><li>Precise</li><li>Warm</li></ul>
+          </div>
+          <div class="vd">
+            <h3>Delivered</h3>
+            <ul class="deliver">
+              <li>Positioning statement</li>
+              <li>Audience profile</li>
+              <li>Visual direction</li>
+              <li>Instagram grid strategy</li>
+              <li><a href="#c04-h">Launch campaign (case study 04)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASE 02: SOCIAL MEDIA STRATEGY ===================== -->
+  <section class="sheet" aria-labelledby="c02-h">
+    <div class="case-head">
+      <div>
+        <p class="num">Case study 02</p>
+        <h2 class="display h2" id="c02-h">Social media strategy</h2>
+      </div>
+      <div class="meta">
+        <span class="tag spec">Speculative, not commissioned by the brand</span>
+        <p><span class="brand-name">Elephant &amp; Co.</span>, an independent social strategy concept. I chose this brand because its feed shows a common problem: great product, no reason to interact.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <article class="block b-before">
+        <div class="stage-name"><b>1</b><h3>Before: the audit</h3></div>
+        <dl class="def">
+          <dt>Problem</dt>
+          <dd>Content lacks a clear recurring structure.</dd>
+          <dt>Observation</dt>
+          <dd>Most posts communicate the product but don't give the audience a reason to interact.</dd>
+        </dl>
+      </article>
+
+      <article class="block b-insight">
+        <div class="stage-name"><b>2</b><h3>Insight</h3></div>
+        <p class="big">The audience isn't simply buying the product. They're buying the experience around it.</p>
+      </article>
+
+      <article class="block b-strategy">
+        <div class="stage-name"><b>3</b><h3>Strategy: four content pillars</h3></div>
+        <div class="pillars">
+          <div class="pillar p-cul"><strong>Culture</strong><span>The music, the nights, the moments the place is known for.</span></div>
+          <div class="pillar p-peo"><strong>People</strong><span>Staff, regulars and the faces that make it feel familiar.</span></div>
+          <div class="pillar p-pro"><strong>Product</strong><span>Food and drinks, shown in the context they're enjoyed.</span></div>
+          <div class="pillar p-exp"><strong>Experience</strong><span>What an evening there actually feels like, start to finish.</span></div>
+        </div>
+      </article>
+
+      <article class="block b-exec">
+        <div class="stage-name"><b>4</b><h3>Execution</h3></div>
+        <div class="exec">
+          <ul>
+            <li><b>6</b>Reel concepts</li>
+            <li><b>3</b>Carousel concepts</li>
+            <li><b>✓</b>Sample captions</li>
+            <li><b>✓</b>Story sequence</li>
+            <li><b>✓</b>Influencer concept</li>
+            <li><b>30</b>Day content calendar</li>
+          </ul>
+          <div>
+            <div class="cal" id="cal" aria-label="30-day calendar colour-coded by content pillar"></div>
+            <div class="cal-key">
+              <span style="--c:#1E2A4B">Culture</span>
+              <span style="--c:#7C1D22">People</span>
+              <span style="--c:#6E7892">Product</span>
+              <span style="--c:#B79A8A">Experience</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="block b-measure">
+        <div class="stage-name"><b>5</b><h3>Measurement</h3></div>
+        <ol class="funnel">
+          <li>Reach</li>
+          <li>Engagement</li>
+          <li>Profile visits</li>
+          <li>Enquiries and bookings</li>
+        </ol>
+        <p class="note">Success metrics I would track: reach, watch time, saves, shares, profile visits, enquiries and conversions.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== CASE 03 + 04 ===================== -->
+  <div class="row">
+    <section class="sheet" aria-labelledby="c03-h">
+      <div class="case-head">
+        <div>
+          <p class="num">Case study 03</p>
+          <h2 class="display h2" id="c03-h">Content &amp; campaign</h2>
+        </div>
+      </div>
+      <div class="meta" style="margin-top:12px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <span class="tag concept">Concept project</span>
+        <p><span class="brand-name">Kinaara</span>, a concept handloom label. Campaign idea: <em>Made slowly</em>, showing the time inside every piece.</p>
+      </div>
+
+      <div class="phones" aria-label="Reel storyboard, three shots">
+        <div><div class="phone ph1"><span>Hands at the loom, close up</span></div><p class="scene">Shot 1. Sound of the loom, no music.</p></div>
+        <div><div class="phone ph2"><span>Thread match-cuts to fabric</span></div><p class="scene">Shot 2. Quick cut on the beat.</p></div>
+        <div><div class="phone ph3"><span>Worn in the city</span></div><p class="scene">Shot 3. Maker's name on screen.</p></div>
+      </div>
+
+      <ul class="phases">
+        <li><b>Tease</b><span>Close-up texture posts with no product shown.</span></li>
+        <li><b>Launch</b><span>Maker-led Reels and a carousel on how one piece is made.</span></li>
+        <li><b>Sustain</b><span>Customers share how they style their piece.</span></li>
+      </ul>
+      <p class="caption">Sample caption: “Some things are worth the wait. This one took the whole week.”</p>
+    </section>
+
+    <section class="sheet" aria-labelledby="c04-h">
+      <div class="case-head">
+        <div>
+          <p class="num">Case study 04</p>
+          <h2 class="display h2" id="c04-h">Launch strategy</h2>
+        </div>
+      </div>
+      <div class="meta" style="margin-top:12px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <span class="tag concept">Concept project</span>
+        <p>A 30-day digital launch for <span class="brand-name">NOIR</span>, built on the positioning in case study 01.</p>
+      </div>
+
+      <ol class="timeline">
+        <li><b>Before opening</b><p>Teaser posts from inside the fit-out and a waitlist for the first evening.</p></li>
+        <li><b>Launch week</b><p>Opening night Reels, local creator visits and a first-week offer shown only on Instagram.</p></li>
+        <li><b>First month</b><p>Weekly listening sessions become recurring content and a reason to return.</p></li>
+      </ol>
+
+      <div class="channels">
+        <div><strong>Instagram</strong>Main storytelling channel</div>
+        <div><strong>Google Business Profile</strong>Found by people nearby</div>
+        <div><strong>Local creators</strong>Trust from real visitors</div>
+        <div><strong>WhatsApp community</strong>Event reminders for regulars</div>
+      </div>
+      <p class="note">What I would track: offer redemptions, map direction requests, saves on event posts and repeat visits.</p>
+    </section>
+  </div>
+
+  <!-- ===================== PROOF OF WORK ===================== -->
+  <section class="sheet soft" id="proof" aria-labelledby="proof-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="approach-head">
+      <h2 class="display h2" id="proof-h">Proof of work</h2>
+      <p class="lead">Screenshots from my actual process: the documents and drafts behind the finished content.</p>
+    </div>
+        <ul class="proof-grid">
+      <li><a class="card-link" href="content-calendar.html">
+        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">days</span><span class="cb-script">Plan</span><img src="images/proof-1.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Content calendar <span aria-hidden="true">→</span></h3><p>A month of posts planned by pillar and format.</p>
+        <span class="card-foot"><span class="open">Open calendar</span></span>
+      </a></li>
+      <li><a class="card-link" href="competitor-analysis.html">
+        <div class="shot shot-cb"><span class="cb-num">4</span><span class="cb-label">archetypes</span><span class="cb-script">Gaps</span><img src="images/proof-2.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Competitor analysis <span aria-hidden="true">→</span></h3><p>How similar brands post, and the gaps they leave.</p>
+        <span class="card-foot"><span class="open">Open analysis</span></span>
+      </a></li>
+      <li><a class="card-link" href="positioning-framework.html">
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Frame</span><span class="cb-label">NOIR</span><span class="cb-script">Position</span><img src="images/proof-3.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Positioning framework <span aria-hidden="true">→</span></h3><p>Audience, need, promise and proof on one page.</p>
+        <span class="card-foot"><span class="open">Open framework</span></span>
+      </a></li>
+      <li><a class="card-link" href="reel-storyboard.html">
+        <div class="shot shot-cb"><span class="cb-num">8</span><span class="cb-label">shots</span><span class="cb-script">Roll</span><img src="images/proof-4.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Reel storyboard <span aria-hidden="true">→</span></h3><p>Shot list, on-screen text and audio notes.</p>
+        <span class="card-foot"><span class="open">Open storyboard</span></span>
+      </a></li>
+      <li><a class="card-link" href="caption-bank.html">
+        <div class="shot shot-cb"><span class="cb-num">30</span><span class="cb-label">captions</span><span class="cb-script">Noir</span><img src="images/proof-5.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Caption bank <span aria-hidden="true">→</span></h3><p>Captions grouped by tone and call to action.</p>
+        <span class="card-foot"><span class="open">Open caption bank</span></span>
+      </a></li>
+      <li><a class="card-link" href="canva-designs.html">
+        <div class="shot shot-cb"><span class="cb-num">5</span><span class="cb-label">slides</span><span class="cb-script">Noir</span><img src="images/proof-6.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Canva designs <span aria-hidden="true">→</span></h3><p>Carousel and story templates in a brand style.</p>
+        <span class="card-foot"><span class="open">Open designs</span></span>
+      </a></li>
+      <li><a class="card-link" href="social-media-audit.html">
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Audit</span><span class="cb-label">Elephant &amp; Co.</span><span class="cb-script">Fix it</span><img src="images/proof-7.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Social media audit <span aria-hidden="true">→</span></h3><p>Feed review with problems and quick fixes.</p>
+        <span class="card-foot"><span class="open">Open audit</span></span>
+      </a></li>
+      <li><a class="card-link" href="campaign-brief.html">
+        <div class="shot shot-cb"><span class="cb-num" style="font-size:2.1rem">Brief</span><span class="cb-label">NOIR</span><span class="cb-script">After dark</span><img src="images/proof-8.jpg" alt="" onerror="imgFail(this)"></div>
+        <h3>Campaign brief <span aria-hidden="true">→</span></h3><p>Objective, audience, idea and deliverables.</p>
+        <span class="card-foot"><span class="open">Open brief</span></span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- ===================== TOOLS & PLATFORMS ===================== -->
+  <section class="sheet soft" id="tools" aria-labelledby="tools-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="approach-head">
+      <div class="skills-head">
+        <svg class="star"><use href="#star"/></svg>
+        <h2 class="display h2" id="tools-h">Tools &amp; platforms</h2>
+      </div>
+      <p class="lead">The software I use to plan, create, publish, advertise and measure.</p>
+    </div>
+    <div class="tool-grid">
+      <article class="tool-group">
+        <h3>Social media management</h3>
+        <ul><li>Meta Business Suite</li><li>Instagram Insights</li><li>Facebook Business Manager</li><li>LinkedIn</li><li>YouTube Studio</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>Design &amp; creative</h3>
+        <ul><li>Canva</li><li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Adobe Premiere Pro</li><li>CapCut</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>Analytics &amp; reporting</h3>
+        <ul><li>Google Analytics 4</li><li>Looker Studio</li><li>Excel</li><li>Google Sheets</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>Content &amp; planning</h3>
+        <ul><li>Notion</li><li>Trello</li><li>Google Workspace</li><li>Google Trends</li><li>AnswerThePublic</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>SEO &amp; marketing</h3>
+        <ul><li>Google Search Console</li><li>Semrush</li><li>Ahrefs</li><li>Ubersuggest</li><li>Google Keyword Planner</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>Paid advertising</h3>
+        <ul><li>Meta Ads Manager</li><li>Google Ads</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>Influencer &amp; creator marketing</h3>
+        <ul><li>Modash</li><li>HypeAuditor</li><li>Influencer Hero</li></ul>
+      </article>
+      <article class="tool-group">
+        <h3>AI &amp; automation</h3>
+        <ul><li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Canva AI</li><li>Notion AI</li><li>Zapier</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="sheet contact" id="contact" aria-labelledby="contact-h">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-title">
+          <h2 class="display h2" id="contact-h">Contact</h2>
+          <span class="script" aria-hidden="true">let's talk</span>
+        </div>
+        <p style="margin-top:12px">Hiring for a social media or content role, or need a strategy for your brand? Send me a note.</p>
+        <a class="btn" href="#" data-link="email">Email me</a>
+        <ul class="links">
+          <li><a href="#" data-link="linkedin">LinkedIn</a></li>
+          <li><a href="#" data-link="instagram">Instagram</a></li>
+          <li><a href="cv.pdf" download>Download CV</a></li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3 class="faq-h">Questions I get asked</h3>
+        <details name="faq">
+          <summary>What kind of roles are you looking for?</summary>
+          <p>Social media, content and digital marketing roles, full-time or internship, plus freelance projects for brands that need a clear social strategy and content to go with it.</p>
+        </details>
+        <details name="faq">
+          <summary>Have you worked with these brands?</summary>
+          <p>Some projects here are independent strategic projects rather than commissioned client work. I created them to show my approach to brand positioning, social strategy and content.</p>
+        </details>
+        <details name="faq">
+          <summary>Why no growth numbers?</summary>
+          <p>I only share results I can back with analytics. For concept and speculative projects I show the metrics I would track instead.</p>
+        </details>
+        <details name="faq">
+          <summary>Do you plan strategy or create the content too?</summary>
+          <p>Both. I build the strategy and content pillars, then create the work: Reel concepts and storyboards, captions, Canva designs and short-form edits in CapCut.</p>
+        </details>
+        <details name="faq">
+          <summary>How do you know if content is working?</summary>
+          <p>I set KPIs before anything goes live. Reach and watch time show attention, saves and shares show value, and profile visits, enquiries and conversions show business impact. I review them regularly and adjust the calendar.</p>
+        </details>
+        <details name="faq">
+          <summary>Can you handle paid social?</summary>
+          <p>Yes. I plan paid campaigns alongside organic content in Meta Ads Manager and Google Ads, and use CTR, CPC, CPM, ROAS and conversion rate to decide what to scale, fix or stop.</p>
+        </details>
+        <details name="faq">
+          <summary>How do you keep up with trends?</summary>
+          <p>I track Google Trends and AnswerThePublic, study what creators in the niche are posting, and only use a trend when it fits the brand's voice and audience.</p>
+        </details>
+        <details name="faq">
+          <summary>What does a freelance project with you look like?</summary>
+          <p>A short call about your goals and audience, then a social media audit. I share a strategy with content pillars and a calendar for your approval, create the content, and send a report with what's working and what to change.</p>
+        </details>
+        <details name="faq">
+          <summary>Where are you based?</summary>
+          <p>I'm based in Pune and open to on-site, hybrid and remote work.</p>
+        </details>
+        <details name="faq">
+          <summary>Why isn't your client work shown here?</summary>
+          <p>The work I've done for clients is covered by NDAs, so I can't share it publicly. Everything in this portfolio is independent work I created to show how I think and work. I'm happy to talk through my process and the kind of projects I've handled, without naming clients.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Sakshee Dahake</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+<script>
+  /* ============ EDIT HERE: paste Sakshee's details between the quotes ============ */
+  const MY_LINKS = {
+    email:     "your.email@example.com",
+    linkedin:  "https://www.linkedin.com/in/saksheedahake2604",
+    instagram: "https://www.instagram.com/your-handle",
+    behance:   "https://www.behance.net/your-profile"
+  };
+  /* ============================ END OF EDIT ============================ */
+
+  document.querySelectorAll("[data-link]").forEach(a => {
+    const key = a.dataset.link, val = MY_LINKS[key];
+    a.href = key === "email" ? "mailto:" + val : val;
+    if (key !== "email") { a.target = "_blank"; a.rel = "noopener"; }
+  });
+
+  // 30-day calendar, coloured by pillar
+  const colors = ["#1E2A4B","#7C1D22","#6E7892","#B79A8A"];
+  const pattern = [0,2,1,3,2,0,3, 1,2,0,3,1,2,3, 0,1,2,3,0,2,1, 3,0,2,1,3,2,0, 1,3];
+  const cal = document.getElementById("cal");
+  pattern.forEach(p => { const i = document.createElement("i"); i.style.background = colors[p]; cal.appendChild(i); });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

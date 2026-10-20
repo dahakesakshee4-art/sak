@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content calendar | Sakshee Dahake</title>
+<meta name="description" content="A 30-day Instagram content calendar for NOIR, a concept café, planned by pillar and format.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A4B; --wine:#7C1D22; --paper:#FFFFFF; --mist:#E1E5EB; --slate:#566079; --line:#C9D0DC;
+    --gap:clamp(12px,1.6vw,20px);
+    --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+    --script:"Mrs Saint Delafield","Brush Script MT",cursive;
+    --body:"Montserrat",system-ui,sans-serif;
+    --culture:#1E2A4B; --people:#7C1D22; --product:#6E7892; --experience:#B79A8A;
+    --espresso:#1A1614; --crema:#8A5A3B; --milk:#C9B8A6; --pap:#EDE6DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--slate);background:var(--mist);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
+  p{max-width:62ch}
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
+  .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
+  .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--ink)}
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);line-height:.92;letter-spacing:-.005em}
+  .h2{font-size:clamp(2.4rem,4.8vw,3.8rem)}
+  .h3d{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;letter-spacing:.02em;line-height:1.05}
+  .script{font-family:var(--script);font-weight:400;color:var(--wine);line-height:1}
+  .star{width:26px;height:26px;color:var(--wine);flex:none}
+  .lead{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .head-title{display:flex;align-items:center;gap:12px}
+  .sub{font-size:.88rem;margin-top:10px}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav .back{display:inline-flex;align-items:center;gap:8px;border-bottom:1.5px solid var(--ink);padding-bottom:2px;letter-spacing:.06em}
+  .nav .back:hover{color:var(--wine);border-color:var(--wine)}
+  .intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(28px,4vw,52px)}
+  .eyebrow{color:var(--wine);font-weight:600;font-size:.85rem}
+  .title{font-size:clamp(3.2rem,7.6vw,6.4rem)}
+  .title .l1,.title .l2{display:block}
+  .title .script{display:block;width:max-content;margin:-.12em 0 0 .9em;font-size:.62em;text-transform:none;transform:rotate(-6deg);letter-spacing:0}
+  .intro .lead{margin-top:22px}
+  .note{display:inline-flex;margin-top:16px;font-size:.78rem;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px}
+  .stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stats li{border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.82rem;box-shadow:3px 4px 0 var(--line);background:var(--paper)}
+  .stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
+  .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;grid-column:1/-1}
+  .btn{display:inline-block;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;padding:12px 20px;border-radius:999px}
+  .btn:hover{background:#63161B}
+  .textlink{font-size:.85rem;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink)}
+  .textlink:hover{color:var(--wine);border-color:var(--wine)}
+  @media (prefers-reduced-motion:no-preference){
+    .title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+    .title .script{animation:sign 1.3s .5s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% 0 0)}}
+  }
+
+  .tag{display:inline-flex;align-items:center;font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+  .tag.concept{color:var(--ink)}
+  .tag.spec{color:var(--wine)}
+
+  .filters{display:grid;gap:14px;margin-top:24px;padding:18px;border-radius:8px;background:#F3F5F8}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .chip i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink))}
+  .chip small{font-size:.72rem;opacity:.7}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .chip[aria-pressed="true"] i{box-shadow:0 0 0 2px #fff}
+  .selects{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  .selects label{font-size:.8rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+  select{font:inherit;font-size:.84rem;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 10px;background:var(--paper)}
+  .count{margin-left:auto;font-size:.82rem;font-weight:600;color:var(--slate)}
+  .reset{font:inherit;font-size:.8rem;font-weight:600;color:var(--wine);background:none;border:0;border-bottom:1.5px solid var(--wine);cursor:pointer}
+  .pill{font-size:.7rem;font-weight:600;border-radius:999px;padding:2px 9px;border:1.5px solid var(--ink);color:var(--ink)}
+
+  .cardgrid{display:grid;gap:14px;margin-top:24px}
+  .cols4{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .box{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:16px;box-shadow:3px 4px 0 var(--line)}
+  .box h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;line-height:1;letter-spacing:.02em;padding-bottom:10px;margin-bottom:10px;border-bottom:1.5px solid var(--line)}
+  .box p{font-size:.84rem;line-height:1.5;margin-top:8px}
+  .box ul{list-style:none;display:grid;gap:5px;margin-top:8px}
+  .box li{font-size:.82rem;color:var(--ink);background:#EEF1F5;border-radius:4px;padding:5px 8px;line-height:1.35}
+  .num{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--ink)}
+
+  .more{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+  .more a{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:.86rem;border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;background:var(--paper);box-shadow:3px 4px 0 var(--line)}
+  .more a:hover{color:var(--wine);border-color:var(--wine)}
+  .more small{display:block;font-weight:500;font-size:.74rem;color:var(--slate);margin-top:2px}
+
+  footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:1000px){
+    .cols4{grid-template-columns:repeat(2,1fr)}
+    .cols3{grid-template-columns:repeat(2,1fr)}
+    .more{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .intro{grid-template-columns:1fr}
+    .nav .me{display:none}
+    .count{margin-left:0;width:100%}
+  }
+  @media (max-width:560px){
+    .cols4,.cols3,.cols2,.more{grid-template-columns:1fr}
+  }
+
+
+  .strip{list-style:none;display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:22px}
+  .strip li{aspect-ratio:1;display:grid;place-items:center;border-radius:4px;font-family:var(--display);font-size:1.05rem}
+  .cal-key{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:.78rem;color:var(--ink);font-weight:600}
+  .cal-key span{display:inline-flex;align-items:center;gap:6px}
+  .cal-key span::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+  .days{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .day{display:flex;flex-direction:column;background:var(--paper);border:1.5px solid var(--line);border-left:5px solid var(--c);border-radius:6px;padding:16px}
+  .day-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .dn{font-family:var(--display);font-size:2rem;line-height:.9;color:var(--ink);margin-right:4px}
+  .pill.tone{background:var(--c);border-color:var(--c);color:var(--t)}
+  .day h3{color:var(--ink);font-size:.98rem;line-height:1.35;margin-top:10px}
+  .day p{font-size:.84rem;margin-top:6px}
+  .day a{margin-top:auto;padding-top:12px;font-size:.78rem;font-weight:600;color:var(--wine);text-decoration:none;border-bottom:0}
+  .day a:hover{text-decoration:underline}
+  .empty{margin-top:18px;font-weight:600;color:var(--ink)}
+  .rules{margin-top:18px;padding-left:20px;display:grid;gap:8px;font-size:.9rem;color:var(--ink)}
+  .rules li::marker{color:var(--wine);font-weight:700}
+  @media (max-width:1000px){.days{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.days{grid-template-columns:1fr}.strip{grid-template-columns:repeat(6,1fr)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 32 32"><g fill="currentColor"><circle cx="16" cy="16" r="6"/><path d="M16 1l2 8h-4zM16 31l-2-8h4zM1 16l8-2v4zM31 16l-8 2v-4zM5.4 5.4l7 4.3-2.8 2.8zM26.6 26.6l-7-4.3 2.8-2.8zM26.6 5.4l-4.3 7-2.8-2.8zM5.4 26.6l4.3-7 2.8 2.8z"/></g></symbol>
+</svg>
+
+<main class="board">
+  <header class="sheet">
+    <nav class="nav" aria-label="Page">
+      <a class="back" href="index.html#proof"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <a class="me" href="index.html">Sakshee Dahake</a>
+    </nav>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Proof of work</p>
+        <h1 class="display title"><span class="l1">Content</span> <span class="l2">calendar<span class="script" aria-hidden="true">30 days</span></span></h1>
+        <p class="lead">A month of posts planned by pillar and format, so every day has a job and the feed keeps a rhythm.</p>
+        <span class="note">Written for NOIR, the concept café brand from case study 01</span>
+      </div>
+      <ul class="stats"><li><b>30</b>days planned</li><li><b>4</b>content pillars</li><li><b>4</b>formats</li><li><b>10</b>Reels</li></ul>
+      <div class="actions"><a class="btn" href="caption-bank.html">Open the caption bank</a><a class="textlink" href="index.html#work">See the NOIR case study</a></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-labelledby="glance-h"><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="glance-h">The month at a glance</h2></div><p>Each square is a day, coloured by content pillar. The pattern is the same one shown in case study 02.</p></div><ol class="strip" aria-label="30-day calendar coloured by pillar"><li style="background:#1E2A4B;color:#fff" title="Day 1: Culture, Reel">1</li><li style="background:#6E7892;color:#fff" title="Day 2: Product, Static">2</li><li style="background:#7C1D22;color:#fff" title="Day 3: People, Carousel">3</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 4: Experience, Carousel">4</li><li style="background:#6E7892;color:#fff" title="Day 5: Product, Reel">5</li><li style="background:#1E2A4B;color:#fff" title="Day 6: Culture, Story">6</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 7: Experience, Static">7</li><li style="background:#7C1D22;color:#fff" title="Day 8: People, Reel">8</li><li style="background:#6E7892;color:#fff" title="Day 9: Product, Carousel">9</li><li style="background:#1E2A4B;color:#fff" title="Day 10: Culture, Static">10</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 11: Experience, Reel">11</li><li style="background:#7C1D22;color:#fff" title="Day 12: People, Static">12</li><li style="background:#6E7892;color:#fff" title="Day 13: Product, Static">13</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 14: Experience, Static">14</li><li style="background:#1E2A4B;color:#fff" title="Day 15: Culture, Reel">15</li><li style="background:#7C1D22;color:#fff" title="Day 16: People, Story">16</li><li style="background:#6E7892;color:#fff" title="Day 17: Product, Carousel">17</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 18: Experience, Carousel">18</li><li style="background:#1E2A4B;color:#fff" title="Day 19: Culture, Reel">19</li><li style="background:#6E7892;color:#fff" title="Day 20: Product, Carousel">20</li><li style="background:#7C1D22;color:#fff" title="Day 21: People, Reel">21</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 22: Experience, Static">22</li><li style="background:#1E2A4B;color:#fff" title="Day 23: Culture, Static">23</li><li style="background:#6E7892;color:#fff" title="Day 24: Product, Carousel">24</li><li style="background:#7C1D22;color:#fff" title="Day 25: People, Reel">25</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 26: Experience, Static">26</li><li style="background:#6E7892;color:#fff" title="Day 27: Product, Story">27</li><li style="background:#1E2A4B;color:#fff" title="Day 28: Culture, Reel">28</li><li style="background:#7C1D22;color:#fff" title="Day 29: People, Carousel">29</li><li style="background:#B79A8A;color:#1E2A4B" title="Day 30: Experience, Reel">30</li></ol><div class="cal-key"><span style="--c:#1E2A4B">Culture</span><span style="--c:#7C1D22">People</span><span style="--c:#6E7892">Product</span><span style="--c:#B79A8A">Experience</span></div></section>
+  <section class="sheet soft" aria-labelledby="pillars-h"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="pillars-h">Four pillars</h2></div><p>The calendar is balanced so no single pillar runs more than two days in a row.</p></div><div class="cardgrid cols4"><article class="box" style="border-top:6px solid #1E2A4B"><h3>Culture</h3><div class="num">7<span style="font-size:.9rem;font-family:var(--body);margin-left:6px;color:var(--slate)">posts</span></div><p>The music, the nights and the moments NOIR is known for. Carries the Friday listening sessions.</p></article><article class="box" style="border-top:6px solid #7C1D22"><h3>People</h3><div class="num">7<span style="font-size:.9rem;font-family:var(--body);margin-left:6px;color:var(--slate)">posts</span></div><p>Staff, regulars and the faces that make the room feel familiar.</p></article><article class="box" style="border-top:6px solid #6E7892"><h3>Product</h3><div class="num">8<span style="font-size:.9rem;font-family:var(--body);margin-left:6px;color:var(--slate)">posts</span></div><p>Drinks and craft, shown in the context they're enjoyed, with one precise fact each time.</p></article><article class="box" style="border-top:6px solid #B79A8A"><h3>Experience</h3><div class="num">8<span style="font-size:.9rem;font-family:var(--body);margin-left:6px;color:var(--slate)">posts</span></div><p>What an evening there feels like, from the first order to last call.</p></article></div></section>
+  <section class="sheet" aria-labelledby="posts-h"><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="posts-h">Day by day</h2></div><p>Filter by pillar or format. Each post links back to a caption in the caption bank.</p></div><div class="filters"><div class="chips" id="pillars" role="group" aria-label="Filter by pillar"></div>
+      <div class="selects"><label>Format <select id="format"></select></label>
+      <button class="reset" id="reset" type="button">Clear filters</button><span class="count" id="count" aria-live="polite"></span></div></div>
+    <ol class="days" id="days"></ol><p class="empty" id="empty" hidden>No posts match these filters.</p></section>
+  <section class="sheet soft" aria-labelledby="rules-h"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><h2 class="display h2" id="rules-h">How I built it</h2>
+  <ol class="rules"><li>Four pillars, no more than two days in a row from the same one, so the feed never feels like one note.</li>
+  <li>Reels carry reach, carousels carry saves, Stories carry conversation, static posts carry mood.</li>
+  <li>Every Friday is anchored by the listening session, so there is always a reason to come back that week.</li>
+  <li>Every post has one job and one call to action. The wording sits in the caption bank.</li>
+  <li>Nothing here invents offers, prices or events that aren't confirmed.</li></ol></section>
+
+
+  <section class="sheet soft" aria-labelledby="more-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="more-h">More proof of work</h2></div>
+    <ul class="more"><li><a href="competitor-analysis.html">Competitor analysis<small>How similar brands post, and the gaps</small></a></li><li><a href="positioning-framework.html">Positioning framework<small>Audience, need, promise and proof</small></a></li><li><a href="reel-storyboard.html">Reel storyboard<small>Shot list, on-screen text and audio</small></a></li><li><a href="caption-bank.html">Caption bank<small>30 captions by tone and CTA</small></a></li><li><a href="canva-designs.html">Canva designs<small>Carousel and story templates</small></a></li><li><a href="social-media-audit.html">Social media audit<small>Feed review with quick fixes</small></a></li><li><a href="campaign-brief.html">Campaign brief<small>Objective, audience, idea, deliverables</small></a></li></ul>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Sakshee Dahake</span>
+  <a href="index.html#proof">Back to portfolio</a>
+</footer>
+
+<script>
+  const CAL = [[1, "Culture", "Reel", "The city gets quieter. We don't close.", "Opening-night ambience, 7pm to close. Sets the late-evening promise."], [2, "Product", "Static", "Slow pour, late hours", "Close-up of a pour-over with no text on the image."], [3, "People", "Carousel", "Meet the people behind the bar", "One face per frame, with the drink each of them would order."], [4, "Experience", "Carousel", "7pm to 1am, in five frames", "How the room changes as the night does."], [5, "Product", "Reel", "Four minutes for one cup", "Pour-over start to finish, with the bloom explained."], [6, "Culture", "Story", "Espresso or cold brew at midnight?", "Poll sticker. The first easy tap for new followers."], [7, "Experience", "Static", "Rain on the glass, espresso in hand.", "Mood post for a wet evening. Swap in a clear-night frame if it's dry."], [8, "People", "Reel", "They know your order before you sit down", "Barista greets a regular. Needs the guest's consent to film."], [9, "Product", "Carousel", "This week's menu drop", "Weekly format. Same layout every week so it becomes a habit."], [10, "Culture", "Static", "Friday listening sessions are back", "Announces the recurring event and opens DMs for seats."], [11, "Experience", "Reel", "Laptop open at 9pm?", "The work-late use case: low lights, refills, no judgement."], [12, "People", "Static", "Your corner, your photo", "Guest photo reposted with permission."], [13, "Product", "Static", "Steamed, not scalded", "Milk texture close-up with one precise fact."], [14, "Experience", "Static", "A quiet corner, saved for someone", "Empty seat, one lamp on. Points to reservations through the link in bio."], [15, "Culture", "Reel", "You pick the album. We press play.", "Guests choose next Friday's record."], [16, "People", "Story", "What should we add to the menu?", "Question sticker. The best reply gets featured."], [17, "Product", "Carousel", "Meet this month's beans", "Tasting notes, how we brew them and what to pair them with."], [18, "Experience", "Carousel", "First time at NOIR?", "Four-step first-visit guide, built to be saved."], [19, "Culture", "Reel", "Friday listening session, start to finish", "Clip from a session. Turns the weekly event into recurring content."], [20, "Product", "Carousel", "Decaf after 10pm, done properly", "Same care, same brew time. Swipe for the decaf menu."], [21, "People", "Reel", "Attempt 1 vs attempt 14", "Latte art practice. Human and a little funny."], [22, "Experience", "Static", "Bring someone you actually want to talk to", "Two cups on a small table."], [23, "Culture", "Static", "Coffee after 9pm is a personality.", "Hot-take text post that invites comments."], [24, "Product", "Carousel", "Tired, dramatic or pretending to be productive?", "Order by mood. Built to be saved."], [25, "People", "Reel", "Every NOIR regular at 11pm, ranked", "Light, self-aware humour. Only works if the regulars are in on it."], [26, "Experience", "Static", "Last order at 12:30. No one leaves in a hurry.", "Reinforces the no-rush promise."], [27, "Product", "Story", "Behind the bar: dialling in the grinder", "Three-frame Story. Craft without the lecture."], [28, "Culture", "Reel", "POV: you said 'one coffee' three hours ago", "Trend format adapted to NOIR's voice."], [29, "People", "Carousel", "Who keeps the lights on after midnight", "The closing routine, told through the team."], [30, "Experience", "Reel", "One month of late nights", "Recap and thank-you. Sets up month two."]];
+
+  const COL = {Culture:["#1E2A4B","#fff"],People:["#7C1D22","#fff"],Product:["#6E7892","#fff"],Experience:["#B79A8A","#1E2A4B"]};
+  const FORMATS = ["Reel","Static","Carousel","Story"];
+  const state = {pillar:"All", format:"All"};
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+  const pEl = document.getElementById("pillars"), fEl = document.getElementById("format");
+  ["All", ...Object.keys(COL)].forEach(p => {
+    const n = p === "All" ? CAL.length : CAL.filter(c => c[1] === p).length;
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.p = p; b.setAttribute("aria-pressed", p === "All");
+    if (p !== "All") b.style.setProperty("--c", COL[p][0]);
+    b.innerHTML = (p === "All" ? "" : "<i></i>") + esc(p) + " <small>" + n + "</small>";
+    b.onclick = () => { state.pillar = p; render(); };
+    pEl.appendChild(b);
+  });
+  fEl.innerHTML = ["All", ...FORMATS].map(o => `<option>${o}</option>`).join("");
+  fEl.onchange = () => { state.format = fEl.value; render(); };
+  document.getElementById("reset").onclick = () => { state.pillar = state.format = "All"; fEl.value = "All"; render(); };
+  function render() {
+    pEl.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.p === state.pillar));
+    const list = CAL.filter(c => (state.pillar === "All" || c[1] === state.pillar) && (state.format === "All" || c[2] === state.format));
+    document.getElementById("days").innerHTML = list.map(c => `
+      <li class="day" style="--c:${COL[c[1]][0]};--t:${COL[c[1]][1]}">
+        <div class="day-top"><span class="dn">${c[0]}</span><span class="pill tone">${esc(c[1])}</span><span class="pill">${esc(c[2])}</span></div>
+        <h3>${esc(c[3])}</h3><p>${esc(c[4])}</p>
+        <a href="caption-bank.html#captions">Find the caption in the caption bank →</a>
+      </li>`).join("");
+    document.getElementById("count").textContent = `Showing ${list.length} of ${CAL.length} days`;
+    document.getElementById("empty").hidden = list.length > 0;
+  }
+  render();
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

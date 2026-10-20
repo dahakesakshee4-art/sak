@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel storyboard | Sakshee Dahake</title>
+<meta name="description" content="A shot-by-shot storyboard for a NOIR Reel, with on-screen text and audio notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A4B; --wine:#7C1D22; --paper:#FFFFFF; --mist:#E1E5EB; --slate:#566079; --line:#C9D0DC;
+    --gap:clamp(12px,1.6vw,20px);
+    --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+    --script:"Mrs Saint Delafield","Brush Script MT",cursive;
+    --body:"Montserrat",system-ui,sans-serif;
+    --culture:#1E2A4B; --people:#7C1D22; --product:#6E7892; --experience:#B79A8A;
+    --espresso:#1A1614; --crema:#8A5A3B; --milk:#C9B8A6; --pap:#EDE6DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--slate);background:var(--mist);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
+  p{max-width:62ch}
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
+  .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
+  .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--ink)}
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);line-height:.92;letter-spacing:-.005em}
+  .h2{font-size:clamp(2.4rem,4.8vw,3.8rem)}
+  .h3d{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;letter-spacing:.02em;line-height:1.05}
+  .script{font-family:var(--script);font-weight:400;color:var(--wine);line-height:1}
+  .star{width:26px;height:26px;color:var(--wine);flex:none}
+  .lead{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .head-title{display:flex;align-items:center;gap:12px}
+  .sub{font-size:.88rem;margin-top:10px}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav .back{display:inline-flex;align-items:center;gap:8px;border-bottom:1.5px solid var(--ink);padding-bottom:2px;letter-spacing:.06em}
+  .nav .back:hover{color:var(--wine);border-color:var(--wine)}
+  .intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(28px,4vw,52px)}
+  .eyebrow{color:var(--wine);font-weight:600;font-size:.85rem}
+  .title{font-size:clamp(3.2rem,7.6vw,6.4rem)}
+  .title .l1,.title .l2{display:block}
+  .title .script{display:block;width:max-content;margin:-.12em 0 0 .9em;font-size:.62em;text-transform:none;transform:rotate(-6deg);letter-spacing:0}
+  .intro .lead{margin-top:22px}
+  .note{display:inline-flex;margin-top:16px;font-size:.78rem;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px}
+  .stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stats li{border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.82rem;box-shadow:3px 4px 0 var(--line);background:var(--paper)}
+  .stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
+  .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;grid-column:1/-1}
+  .btn{display:inline-block;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;padding:12px 20px;border-radius:999px}
+  .btn:hover{background:#63161B}
+  .textlink{font-size:.85rem;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink)}
+  .textlink:hover{color:var(--wine);border-color:var(--wine)}
+  @media (prefers-reduced-motion:no-preference){
+    .title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+    .title .script{animation:sign 1.3s .5s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% 0 0)}}
+  }
+
+  .tag{display:inline-flex;align-items:center;font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+  .tag.concept{color:var(--ink)}
+  .tag.spec{color:var(--wine)}
+
+  .filters{display:grid;gap:14px;margin-top:24px;padding:18px;border-radius:8px;background:#F3F5F8}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .chip i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink))}
+  .chip small{font-size:.72rem;opacity:.7}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .chip[aria-pressed="true"] i{box-shadow:0 0 0 2px #fff}
+  .selects{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  .selects label{font-size:.8rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+  select{font:inherit;font-size:.84rem;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 10px;background:var(--paper)}
+  .count{margin-left:auto;font-size:.82rem;font-weight:600;color:var(--slate)}
+  .reset{font:inherit;font-size:.8rem;font-weight:600;color:var(--wine);background:none;border:0;border-bottom:1.5px solid var(--wine);cursor:pointer}
+  .pill{font-size:.7rem;font-weight:600;border-radius:999px;padding:2px 9px;border:1.5px solid var(--ink);color:var(--ink)}
+
+  .cardgrid{display:grid;gap:14px;margin-top:24px}
+  .cols4{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .box{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:16px;box-shadow:3px 4px 0 var(--line)}
+  .box h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;line-height:1;letter-spacing:.02em;padding-bottom:10px;margin-bottom:10px;border-bottom:1.5px solid var(--line)}
+  .box p{font-size:.84rem;line-height:1.5;margin-top:8px}
+  .box ul{list-style:none;display:grid;gap:5px;margin-top:8px}
+  .box li{font-size:.82rem;color:var(--ink);background:#EEF1F5;border-radius:4px;padding:5px 8px;line-height:1.35}
+  .num{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--ink)}
+
+  .more{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+  .more a{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:.86rem;border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;background:var(--paper);box-shadow:3px 4px 0 var(--line)}
+  .more a:hover{color:var(--wine);border-color:var(--wine)}
+  .more small{display:block;font-weight:500;font-size:.74rem;color:var(--slate);margin-top:2px}
+
+  footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:1000px){
+    .cols4{grid-template-columns:repeat(2,1fr)}
+    .cols3{grid-template-columns:repeat(2,1fr)}
+    .more{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .intro{grid-template-columns:1fr}
+    .nav .me{display:none}
+    .count{margin-left:0;width:100%}
+  }
+  @media (max-width:560px){
+    .cols4,.cols3,.cols2,.more{grid-template-columns:1fr}
+  }
+
+
+  .bar{list-style:none;display:flex;gap:4px;margin-top:22px;height:56px}
+  .bar li{display:grid;place-items:center;border-radius:4px;font-family:var(--display);font-size:1.2rem;border:1px solid rgba(30,42,75,.15)}
+  .shots{align-items:start}
+  .shotc{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:12px;box-shadow:3px 4px 0 var(--line)}
+  .frame{position:relative;aspect-ratio:9/13;border-radius:10px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;gap:8px;overflow:hidden}
+  .sn{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+  .vis{font-size:.78rem;line-height:1.35;font-weight:500}
+  .os{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;line-height:1.05;letter-spacing:.03em;border-top:1.5px solid currentColor;padding-top:8px}
+  .shotc dl{margin-top:10px;font-size:.8rem}
+  .shotc dt{color:var(--wine);font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
+  .shotc dd{color:var(--ink);line-height:1.4}
+  .specs{margin-top:16px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .specs li{border-top:1px solid var(--line);padding:10px 0;font-size:.88rem;color:var(--ink)}
+  @media (max-width:760px){.specs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 32 32"><g fill="currentColor"><circle cx="16" cy="16" r="6"/><path d="M16 1l2 8h-4zM16 31l-2-8h4zM1 16l8-2v4zM31 16l-8 2v-4zM5.4 5.4l7 4.3-2.8 2.8zM26.6 26.6l-7-4.3 2.8-2.8zM26.6 5.4l-4.3 7-2.8-2.8zM5.4 26.6l4.3-7 2.8 2.8z"/></g></symbol>
+</svg>
+
+<main class="board">
+  <header class="sheet">
+    <nav class="nav" aria-label="Page">
+      <a class="back" href="index.html#proof"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <a class="me" href="index.html">Sakshee Dahake</a>
+    </nav>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Proof of work</p>
+        <h1 class="display title"><span class="l1">Reel</span> <span class="l2">storyboard<span class="script" aria-hidden="true">Roll</span></span></h1>
+        <p class="lead">Shot list, on-screen text and audio notes for a 22-second NOIR Reel, planned before anyone picks up a camera.</p>
+        <span class="note">Concept project: NOIR, the concept café brand from case study 01</span>
+      </div>
+      <ul class="stats"><li><b>8</b>shots</li><li><b>22s</b>runtime</li><li><b>9:16</b>vertical</li><li><b>5</b>on-screen lines</li></ul>
+      <div class="actions"><a class="btn" href="content-calendar.html">See the content calendar</a><a class="textlink" href="index.html#work">See the NOIR case study</a></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-labelledby="run-h"><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="run-h">Runtime</h2></div><p>22 seconds across 8 shots. Each block is as wide as the shot is long.</p></div><ol class="bar" aria-label="Shot timeline"><li style="flex:2;background:#1A1614;color:#EDE6DC"><b>1</b></li><li style="flex:3;background:#8A5A3B;color:#F4ECE2"><b>2</b></li><li style="flex:3;background:#1E2A4B;color:#EDE6DC"><b>3</b></li><li style="flex:3;background:#C9B8A6;color:#1A1614"><b>4</b></li><li style="flex:3;background:#1A1614;color:#EDE6DC"><b>5</b></li><li style="flex:3;background:#6E7892;color:#fff"><b>6</b></li><li style="flex:3;background:#8A5A3B;color:#F4ECE2"><b>7</b></li><li style="flex:2;background:#1A1614;color:#EDE6DC"><b>8</b></li></ol></section>
+  <section class="sheet soft" aria-labelledby="shots-h"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="shots-h">Shot list</h2></div><p>Visual, on-screen text and audio for each shot, in order.</p></div><div class="cardgrid cols4 shots"><article class="shotc"><div class="frame" style="background:#1A1614;color:#EDE6DC"><span class="sn">Shot 1</span>
+    <span class="vis">Close-up of the kettle spout. The first drop lands on the grounds and they bloom.</span></div>
+    <dl><dt>Time</dt><dd>0 to 2s</dd><dt>On-screen text</dt><dd>None</dd><dt>Audio</dt><dd>Room tone only. No music.</dd></dl></article><article class="shotc"><div class="frame" style="background:#8A5A3B;color:#F4ECE2"><span class="sn">Shot 2</span>
+    <span class="vis">Slow pour in circles, steam rising.</span><span class="os">Four minutes. One cup.</span></div>
+    <dl><dt>Time</dt><dd>2 to 5s</dd><dt>On-screen text</dt><dd>Four minutes. One cup.</dd><dt>Audio</dt><dd>The sound of the pour.</dd></dl></article><article class="shotc"><div class="frame" style="background:#1E2A4B;color:#EDE6DC"><span class="sn">Shot 3</span>
+    <span class="vis">Wide shot of the window. Rain on the glass, one lamp on.</span><span class="os">7:42pm</span></div>
+    <dl><dt>Time</dt><dd>5 to 8s</dd><dt>On-screen text</dt><dd>7:42pm</dd><dt>Audio</dt><dd>Room tone, rain underneath.</dd></dl></article><article class="shotc"><div class="frame" style="background:#C9B8A6;color:#1A1614"><span class="sn">Shot 4</span>
+    <span class="vis">Hands set the cup on the saucer. The saucer clicks.</span></div>
+    <dl><dt>Time</dt><dd>8 to 11s</dd><dt>On-screen text</dt><dd>None</dd><dt>Audio</dt><dd>Cup on saucer.</dd></dl></article><article class="shotc"><div class="frame" style="background:#1A1614;color:#EDE6DC"><span class="sn">Shot 5</span>
+    <span class="vis">A guest closes their laptop and exhales.</span><span class="os">Nothing here is rushed.</span></div>
+    <dl><dt>Time</dt><dd>11 to 14s</dd><dt>On-screen text</dt><dd>Nothing here is rushed.</dd><dt>Audio</dt><dd>One soft sustained note fades in.</dd></dl></article><article class="shotc"><div class="frame" style="background:#6E7892;color:#fff"><span class="sn">Shot 6</span>
+    <span class="vis">Barista and a regular exchange a nod across the bar.</span></div>
+    <dl><dt>Time</dt><dd>14 to 17s</dd><dt>On-screen text</dt><dd>None</dd><dt>Audio</dt><dd>Note holds. Low voices in the background.</dd></dl></article><article class="shotc"><div class="frame" style="background:#8A5A3B;color:#F4ECE2"><span class="sn">Shot 7</span>
+    <span class="vis">The Open till 1am sign, lit and still.</span><span class="os">Open till 1am.</span></div>
+    <dl><dt>Time</dt><dd>17 to 20s</dd><dt>On-screen text</dt><dd>Open till 1am.</dd><dt>Audio</dt><dd>Note holds.</dd></dl></article><article class="shotc"><div class="frame" style="background:#1A1614;color:#EDE6DC"><span class="sn">Shot 8</span>
+    <span class="vis">End card. NOIR wordmark on espresso.</span><span class="os">NOIR. Coffee after dark.</span></div>
+    <dl><dt>Time</dt><dd>20 to 22s</dd><dt>On-screen text</dt><dd>NOIR. Coffee after dark.</dd><dt>Audio</dt><dd>Note fades to silence.</dd></dl></article></div></section>
+  <section class="sheet" aria-labelledby="spec-h"><h2 class="display h2" id="spec-h">Production notes</h2><ul class="specs"><li>Vertical 9:16, 22 seconds</li><li>Captions on for any spoken or on-screen words</li><li>Cover frame: shot 2, the pour</li><li>No music for the first eight seconds; the room is the soundtrack</li><li>Caption: "Nothing here is rushed. Especially this." with a Share call to action</li></ul></section>
+
+
+  <section class="sheet soft" aria-labelledby="more-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="more-h">More proof of work</h2></div>
+    <ul class="more"><li><a href="content-calendar.html">Content calendar<small>A month of posts by pillar and format</small></a></li><li><a href="competitor-analysis.html">Competitor analysis<small>How similar brands post, and the gaps</small></a></li><li><a href="positioning-framework.html">Positioning framework<small>Audience, need, promise and proof</small></a></li><li><a href="caption-bank.html">Caption bank<small>30 captions by tone and CTA</small></a></li><li><a href="canva-designs.html">Canva designs<small>Carousel and story templates</small></a></li><li><a href="social-media-audit.html">Social media audit<small>Feed review with quick fixes</small></a></li><li><a href="campaign-brief.html">Campaign brief<small>Objective, audience, idea, deliverables</small></a></li></ul>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Sakshee Dahake</span>
+  <a href="index.html#proof">Back to portfolio</a>
+</footer>
+
+<script>
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

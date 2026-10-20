@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caption bank | Sakshee Dahake</title>
+<meta name="description" content="30 Instagram captions for NOIR, a concept café brand, grouped by tone and call to action.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A4B; --wine:#7C1D22; --paper:#FFFFFF; --mist:#E1E5EB; --slate:#566079; --line:#C9D0DC;
+    --gap:clamp(12px,1.6vw,20px);
+    --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+    --script:"Mrs Saint Delafield","Brush Script MT",cursive;
+    --body:"Montserrat",system-ui,sans-serif;
+    --moody:#1E2A4B; --warm:#7C1D22; --playful:#B7812F; --craft:#4C7560; --community:#6B5689;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--slate);background:var(--mist);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
+  p{max-width:62ch}
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
+  .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
+  .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--ink)}
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);line-height:.92;letter-spacing:-.005em}
+  .h2{font-size:clamp(2.4rem,4.8vw,3.8rem)}
+  .script{font-family:var(--script);font-weight:400;color:var(--wine);line-height:1}
+  .star{width:26px;height:26px;color:var(--wine);flex:none}
+  .lead{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .head-title{display:flex;align-items:center;gap:12px}
+
+  /* top */
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav .back{display:inline-flex;align-items:center;gap:8px;border-bottom:1.5px solid var(--ink);padding-bottom:2px;letter-spacing:.06em}
+  .nav .back:hover{color:var(--wine);border-color:var(--wine)}
+  .intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(28px,4vw,52px)}
+  .eyebrow{color:var(--wine);font-weight:600;font-size:.85rem}
+  .title{font-size:clamp(3.6rem,10vw,8rem)}
+  .title .l1,.title .l2{display:block}
+  .title .l2{position:relative;width:max-content}
+  .title .script{position:absolute;left:calc(100% + .05em);bottom:.02em;font-size:.72em;text-transform:none;transform:rotate(-8deg);letter-spacing:0;white-space:nowrap}
+  .intro .lead{margin-top:clamp(34px,4vw,48px)}
+  .note{display:inline-flex;margin-top:16px;font-size:.78rem;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px}
+  .stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stats li{border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.82rem;box-shadow:3px 4px 0 var(--line);background:var(--paper)}
+  .stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
+  .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;grid-column:1/-1}
+  .btn{display:inline-block;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;padding:12px 20px;border-radius:999px}
+  .btn:hover{background:#63161B}
+  .textlink{font-size:.85rem;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink)}
+  .textlink:hover{color:var(--wine);border-color:var(--wine)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+    .title .script{animation:sign 1.3s .5s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% 0 0)}}
+  }
+
+  /* filters */
+  .filters{display:grid;gap:14px;margin-top:24px;padding:18px;border-radius:8px;background:#F3F5F8}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .chip i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink))}
+  .chip small{font-size:.72rem;opacity:.7}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .chip[aria-pressed="true"] i{box-shadow:0 0 0 2px #fff}
+  .selects{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  .selects label{font-size:.8rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+  select{font:inherit;font-size:.84rem;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 10px;background:var(--paper)}
+  .count{margin-left:auto;font-size:.82rem;font-weight:600;color:var(--slate)}
+  .reset{font:inherit;font-size:.8rem;font-weight:600;color:var(--wine);background:none;border:0;border-bottom:1.5px solid var(--wine);cursor:pointer}
+
+  /* caption cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;list-style:none}
+  .card{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1.5px solid var(--line);border-left:5px solid var(--c);border-radius:6px;padding:16px 16px 14px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .pill{font-size:.7rem;font-weight:600;border-radius:999px;padding:2px 9px;border:1.5px solid var(--ink);color:var(--ink)}
+  .pill.tone{border-color:var(--c);background:var(--c);color:#fff}
+  .idea{font-size:.74rem;color:var(--slate);margin-top:10px;line-height:1.4}
+  .hook{color:var(--ink);font-weight:700;font-size:1rem;line-height:1.35;margin-top:6px}
+  .body{font-size:.88rem;margin-top:8px;white-space:pre-line;color:#3F4861}
+  .cta{font-size:.88rem;margin-top:10px;color:var(--wine);font-weight:600}
+  .tags{font-size:.76rem;margin-top:8px;color:var(--slate);word-break:break-word}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px}
+  .chars{font-size:.72rem;color:var(--slate)}
+  .copy{font:inherit;font-size:.78rem;font-weight:600;color:var(--ink);background:none;border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+  .copy:hover{background:var(--ink);color:#fff}
+  .copy.done{background:var(--wine);border-color:var(--wine);color:#fff}
+  .spacer{height:10px}
+  .empty{margin-top:18px;font-weight:600;color:var(--ink)}
+
+  /* CTA bank */
+  .cta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+  .cta-card{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:16px;box-shadow:3px 4px 0 var(--line)}
+  .cta-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding-bottom:10px;border-bottom:1.5px solid var(--line)}
+  .cta-card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;line-height:1;letter-spacing:.02em}
+  .goal{font-size:.68rem;font-weight:600;color:#fff;background:var(--wine);border-radius:999px;padding:2px 8px;white-space:nowrap}
+  .cta-card p{font-size:.8rem;margin-top:10px;line-height:1.45}
+  .cta-card ul{list-style:none;margin-top:10px;display:grid;gap:5px}
+  .cta-card li{font-size:.8rem;color:var(--ink);background:#EEF1F5;border-radius:4px;padding:5px 8px;line-height:1.35}
+
+  /* hooks + voice */
+  .hook-list,.voice-list{list-style:none;margin-top:22px}
+  .hook-list li{display:grid;grid-template-columns:130px 1fr;gap:2px 16px;padding:12px 0;border-top:1px solid var(--line)}
+  .hook-list b,.voice-list b{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.05rem;letter-spacing:.02em;line-height:1.2;grid-row:span 2}
+  .hook-list span{font-size:.84rem}
+  .hook-list q{font-size:.86rem;color:var(--wine);font-weight:600;quotes:"“" "”"}
+  .voice-list li{display:grid;grid-template-columns:110px 1fr 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:start}
+  .voice-list b{grid-row:auto}
+  .yes,.no{font-size:.84rem;line-height:1.4;padding-left:22px;position:relative}
+  .yes::before,.no::before{position:absolute;left:0;top:0;font-weight:700}
+  .yes{color:var(--ink)} .yes::before{content:"✓";color:#2E6B3F}
+  .no{color:#8A92A6;text-decoration:line-through;text-decoration-color:#C3C9D5} .no::before{content:"✕";color:var(--wine);text-decoration:none}
+  .rules-h{color:var(--ink);font-size:.95rem;font-weight:700;margin-top:26px}
+  .rules{margin-top:10px;padding-left:18px;display:grid;gap:6px;font-size:.86rem;color:var(--ink)}
+  .rules li::marker{color:var(--wine)}
+
+  footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:1000px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .cta-grid{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .intro{grid-template-columns:1fr}
+    .nav .me{display:none}
+    .count{margin-left:0;width:100%}
+  }
+  @media (max-width:560px){
+    .grid,.cta-grid{grid-template-columns:1fr}
+    .hook-list li{grid-template-columns:1fr}
+    .hook-list b{grid-row:auto}
+    .voice-list li{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 32 32"><g fill="currentColor"><circle cx="16" cy="16" r="6"/><path d="M16 1l2 8h-4zM16 31l-2-8h4zM1 16l8-2v4zM31 16l-8 2v-4zM5.4 5.4l7 4.3-2.8 2.8zM26.6 26.6l-7-4.3 2.8-2.8zM26.6 5.4l-4.3 7-2.8-2.8zM5.4 26.6l4.3-7 2.8 2.8z"/></g></symbol>
+</svg>
+
+<main class="board">
+  <header class="sheet">
+    <nav class="nav" aria-label="Page">
+      <a class="back" href="index.html#proof"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <a class="me" href="index.html">Sakshee Dahake</a>
+    </nav>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Proof of work</p>
+        <h1 class="display title"><span class="l1">Caption</span> <span class="l2">bank<span class="script" aria-hidden="true">Noir</span></span></h1>
+        <p class="lead">Instagram captions grouped by tone and call to action, with the hook formulas, CTA library and voice rules behind them.</p>
+        <span class="note">Written for NOIR, the concept café brand from case study 01</span>
+      </div>
+      <ul class="stats"><li><b>30</b>captions</li><li><b>5</b>tones</li><li><b>8</b>CTA types</li><li><b>9</b>hook formulas</li></ul>
+      <div class="actions">
+        <a class="btn" href="NOIR-caption-bank.xlsx" download>Download the spreadsheet</a>
+        <a class="textlink" href="index.html#work">See the NOIR case study</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sheet" id="captions" aria-labelledby="cap-h">
+    <div class="head">
+      <div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="cap-h">Captions</h2></div>
+      <p>Filter by tone, call to action or format. Every card copies as a ready-to-post caption.</p>
+    </div>
+
+    <div class="filters">
+      <div class="chips" id="tones" role="group" aria-label="Filter by tone"></div>
+      <div class="selects">
+        <label>CTA type <select id="cta"></select></label>
+        <label>Format <select id="format"></select></label>
+        <button class="reset" id="reset" type="button">Clear filters</button>
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <ul class="grid" id="grid"></ul>
+    <p class="empty" id="empty" hidden>No captions match these filters.</p>
+  </section>
+
+  <section class="sheet soft" aria-labelledby="cta-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="head">
+      <div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="cta-h">CTA bank</h2></div>
+      <p>The call to action is picked by the goal of the post. One per caption, always on the last line.</p>
+    </div>
+    <div class="cta-grid">
+        <article class="cta-card">
+          <div class="cta-top"><h3>Save</h3><span class="goal">Reach</span></div>
+          <p>Saves tell the algorithm a post is worth coming back to.</p>
+          <ul><li>Save this for your next visit.</li><li>Save this so you remember what to order.</li><li>Save this for your next home brew.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Share</h3><span class="goal">Reach</span></div>
+          <p>Shares put the post in front of people who don&#x27;t follow yet.</p>
+          <ul><li>Send this to the friend who needs to slow down.</li><li>Send this to someone who&#x27;d love this place.</li><li>Share this with your late-night crew.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Comment</h3><span class="goal">Engagement</span></div>
+          <p>Comments start conversations and show what the audience cares about.</p>
+          <ul><li>Tell us your rainy-night order.</li><li>Which one are you? Be honest.</li><li>Agree or disagree?</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Tag</h3><span class="goal">Engagement</span></div>
+          <p>Tags bring in friends of existing fans.</p>
+          <ul><li>Tag your café person.</li><li>Tag someone you&#x27;ve met here.</li><li>Tag the friend you&#x27;d bring on a Friday.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Visit / Reserve</h3><span class="goal">Footfall</span></div>
+          <p>Turns attention into people walking through the door.</p>
+          <ul><li>Reserve a corner through the link in bio.</li><li>See you after dark.</li><li>Come work late with us.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>DM</h3><span class="goal">Leads</span></div>
+          <p>Private messages are warmer leads for events and bookings.</p>
+          <ul><li>DM us to save a seat.</li><li>Send us your idea.</li><li>Message us for group bookings.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Follow</h3><span class="goal">Growth</span></div>
+          <p>Gives new viewers a reason to stay for the next post.</p>
+          <ul><li>Follow for what&#x27;s on this week.</li><li>Follow for more from behind the bar.</li><li>Follow along for month two.</li></ul>
+        </article>
+        <article class="cta-card">
+          <div class="cta-top"><h3>Vote</h3><span class="goal">Engagement</span></div>
+          <p>Polls are quick taps that lift Story engagement.</p>
+          <ul><li>Vote in the poll.</li><li>Settle it for us.</li><li>Pick one. No fence-sitting.</li></ul>
+        </article>
+    </div>
+  </section>
+
+  <div class="row">
+    <section class="sheet" aria-labelledby="hook-h">
+      <h2 class="display h2" id="hook-h">Hook formulas</h2>
+      <p style="margin-top:10px">The first line decides whether anyone reads the rest.</p>
+      <ul class="hook-list">
+          <li><b>Mood line</b><span>Set the scene in one sensory sentence.</span><q>Rain on the glass, espresso in hand.</q></li>
+          <li><b>Time stamp</b><span>Anchor the post to a specific moment.</span><q>7pm to 1am, in five frames.</q></li>
+          <li><b>Direct address</b><span>Speak to one specific person.</span><q>First time at NOIR? Here&#x27;s how to do it right.</q></li>
+          <li><b>POV</b><span>Put the viewer inside a relatable moment.</span><q>POV: you said &#x27;one coffee&#x27; three hours ago.</q></li>
+          <li><b>Ranking / list</b><span>Promise a quick, scannable payoff.</span><q>Every NOIR regular at 11pm, ranked.</q></li>
+          <li><b>Before vs after</b><span>Show progress or contrast.</span><q>Attempt 1 vs attempt 14.</q></li>
+          <li><b>Hot take</b><span>A mild opinion people want to react to.</span><q>Coffee after 9pm is a personality.</q></li>
+          <li><b>Curiosity gap</b><span>Raise a question the caption answers.</span><q>Four minutes for one cup. Here&#x27;s why.</q></li>
+          <li><b>Myth buster</b><span>Correct something people get wrong.</span><q>Steamed, not scalded. There&#x27;s a difference.</q></li>
+      </ul>
+    </section>
+
+    <section class="sheet" aria-labelledby="voice-h">
+      <h2 class="display h2" id="voice-h">Voice guide</h2>
+      <p style="margin-top:10px">NOIR sounds unhurried, moody, precise and warm.</p>
+      <ul class="voice-list">
+          <li><b>Unhurried</b><span class="yes">Stay as long as you like.</span><span class="no">Grab your coffee and go!</span></li>
+          <li><b>Moody</b><span class="yes">Soft lights, slow pours.</span><span class="no">The BEST vibes in town!!!</span></li>
+          <li><b>Precise</b><span class="yes">Silky milk sits around 60°C.</span><span class="no">Our coffee is simply amazing.</span></li>
+          <li><b>Warm</b><span class="yes">They know your order before you sit down.</span><span class="no">Valued customers, visit us today.</span></li>
+      </ul>
+      <h3 class="rules-h">Writing rules</h3>
+      <ul class="rules"><li>Hook on the first line, under 10 words where possible.</li><li>Sentence case. No all-caps shouting, no strings of exclamation marks.</li><li>Short lines with a blank line between hook, body and CTA.</li><li>One CTA per caption, always last.</li><li>Emojis: none or one. The visuals carry the mood.</li><li>3 to 5 hashtags: one branded (#NOIRafterdark) plus topic tags.</li><li>Never invent offers, prices or events that aren&#x27;t confirmed.</li></ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Sakshee Dahake</span>
+  <a href="index.html#proof">Back to portfolio</a>
+</footer>
+
+<script>
+  const CAPTIONS = [{"tone": "Moody", "cta": "Save", "format": "Reel", "idea": "Late-night ambience, 7pm to close", "hook": "The city gets quieter. We don't close.", "body": "Soft lights, slow pours and a corner that's yours until 1am.", "ctaLine": "Save this for the next night you need somewhere to go.", "tags": "#NOIRafterdark #latenightcoffee #coffeebar"}, {"tone": "Moody", "cta": "Comment", "format": "Static", "idea": "Rain on the front window", "hook": "Rain on the glass, espresso in hand.", "body": "Some evenings plan themselves. This is one of them.", "ctaLine": "Tell us your rainy-night order.", "tags": "#NOIRafterdark #rainynights #cafeculture"}, {"tone": "Moody", "cta": "Comment", "format": "Carousel", "idea": "The café hour by hour, five frames", "hook": "7pm to 1am, in five frames.", "body": "Swipe to watch NOIR change as the night does. The light drops, the music softens, the conversations get better.", "ctaLine": "Which hour is yours? Tell us below.", "tags": "#NOIRafterdark #coffeebar #nightowls"}, {"tone": "Moody", "cta": "Share", "format": "Reel", "idea": "Slow pour close-up, no music", "hook": "Nothing here is rushed. Especially this.", "body": "Four slow minutes for one cup, and it tastes like it.", "ctaLine": "Send this to the friend who needs to slow down.", "tags": "#slowcoffee #pourover #NOIRafterdark"}, {"tone": "Moody", "cta": "Visit / Reserve", "format": "Static", "idea": "'Open till 1am' graphic", "hook": "For the ones whose day starts late.", "body": "Open till 1am, every night. Come as you are, stay as long as you like.", "ctaLine": "See you after dark.", "tags": "#NOIRafterdark #latenightcoffee #nightowls"}, {"tone": "Moody", "cta": "Visit / Reserve", "format": "Static", "idea": "Empty corner seat, one lamp on", "hook": "A quiet corner, saved for someone.", "body": "Could be you. Could be tonight.", "ctaLine": "Reserve a corner through the link in bio.", "tags": "#NOIRafterdark #thirdplace #coffeebar"}, {"tone": "Warm", "cta": "Save", "format": "Carousel", "idea": "First-timer's guide", "hook": "First time at NOIR? Here's how to do it right.", "body": "1. Order something slow.\n2. Pick a corner.\n3. Put your phone down for ten minutes.\n4. Stay longer than you planned.", "ctaLine": "Save this for your first visit.", "tags": "#NOIRafterdark #cafeculture #coffeebar"}, {"tone": "Warm", "cta": "Tag", "format": "Reel", "idea": "Barista greeting a regular by their order", "hook": "They know your order before you sit down.", "body": "That's the goal with every person who walks in. Takes a few visits. Worth it.", "ctaLine": "Tag your café person.", "tags": "#peopleofNOIR #cafeculture #baristalife"}, {"tone": "Warm", "cta": "Share", "format": "Static", "idea": "Two cups on a small table", "hook": "Bring someone you actually want to talk to.", "body": "Low music, no rush, and a table that fits exactly two.", "ctaLine": "Send this to them. They'll get the hint.", "tags": "#NOIRafterdark #coffeedate #thirdplace"}, {"tone": "Warm", "cta": "Visit / Reserve", "format": "Reel", "idea": "Laptop session at 9pm", "hook": "Laptop open at 9pm? No one here will judge.", "body": "The Wi-Fi's on, the lights are low and the refills keep coming.", "ctaLine": "Come work late with us.", "tags": "#workfromcafe #nightowls #NOIRafterdark"}, {"tone": "Warm", "cta": "Follow", "format": "Static", "idea": "Last order sign on the bar", "hook": "Last order at 12:30. No one leaves in a hurry.", "body": "We'd rather you finish the conversation than finish on time.", "ctaLine": "Follow for what's on this week.", "tags": "#NOIRafterdark #latenightcoffee #coffeebar"}, {"tone": "Warm", "cta": "Save", "format": "Carousel", "idea": "This week's menu drop", "hook": "This week's menu drop is here.", "body": "Three new drinks, one returning favourite. Swipe for all four.", "ctaLine": "Save this so you remember what to order.", "tags": "#menudrop #NOIRafterdark #coffeebar"}, {"tone": "Playful", "cta": "Comment", "format": "Reel", "idea": "Every regular at 11pm, ranked", "hook": "Every NOIR regular at 11pm, ranked.", "body": "The one on their third cortado. The one 'just finishing an email'. The one who came for ten minutes two hours ago.", "ctaLine": "Which one are you? Be honest.", "tags": "#peopleofNOIR #nightowls #cafeculture"}, {"tone": "Playful", "cta": "Comment", "format": "Static", "idea": "Bold text post", "hook": "Coffee after 9pm is a personality.", "body": "We said what we said.", "ctaLine": "Agree or disagree?", "tags": "#latenightcoffee #NOIRafterdark #coffeebar"}, {"tone": "Playful", "cta": "Share", "format": "Reel", "idea": "POV trend", "hook": "POV: you said 'one coffee' three hours ago.", "body": "No regrets. Maybe one more.", "ctaLine": "Send this to the friend who always says 'just one'.", "tags": "#nightowls #NOIRafterdark #cafeculture"}, {"tone": "Playful", "cta": "Vote", "format": "Story", "idea": "Poll sticker", "hook": "Espresso or cold brew at midnight?", "body": "Settle it for us. The loudest side gets a special next week.", "ctaLine": "Vote in the poll.", "tags": "#NOIRafterdark"}, {"tone": "Playful", "cta": "Comment", "format": "Static", "idea": "Bold text post", "hook": "Sleep is great. Have you tried a cortado?", "body": "Kidding. We do a very good decaf too.", "ctaLine": "Your go-to late-night order?", "tags": "#latenightcoffee #NOIRafterdark #coffeebar"}, {"tone": "Playful", "cta": "Save", "format": "Carousel", "idea": "Order by your mood", "hook": "Tired, dramatic or pretending to be productive?", "body": "There's a drink for each. Swipe to find yours.", "ctaLine": "Save this for tonight's order.", "tags": "#NOIRafterdark #coffeebar #menudrop"}, {"tone": "Craft", "cta": "Save", "format": "Reel", "idea": "Pour-over process start to finish", "hook": "Four minutes for one cup. Here's why.", "body": "The bloom lets the coffee release gas so the water can pull out the flavour evenly. Rush it and the cup tastes flat.", "ctaLine": "Save this for your next home brew.", "tags": "#pourover #slowcoffee #baristalife"}, {"tone": "Craft", "cta": "Comment", "format": "Carousel", "idea": "Meet this month's beans", "hook": "Meet this month's beans.", "body": "A medium roast with notes of cocoa and orange. Swipe for how we brew it and what to pair it with.", "ctaLine": "Ask us about them at the bar, or drop a question here.", "tags": "#specialtycoffee #slowcoffee #NOIRafterdark"}, {"tone": "Craft", "cta": "Share", "format": "Reel", "idea": "Latte art attempt 1 vs 14", "hook": "Attempt 1 vs attempt 14.", "body": "Practice looks like this. A lot of milk, a lot of patience.", "ctaLine": "Send this to someone learning something new.", "tags": "#latteart #baristalife #behindthebar"}, {"tone": "Craft", "cta": "Follow", "format": "Static", "idea": "Milk texture close-up", "hook": "Steamed, not scalded. There's a difference.", "body": "Silky milk sits around 60°C. Any hotter and the sweetness disappears.", "ctaLine": "Follow for more from behind the bar.", "tags": "#behindthebar #baristalife #coffeebar"}, {"tone": "Craft", "cta": "Save", "format": "Carousel", "idea": "Decaf done properly", "hook": "Decaf after 10pm, done properly.", "body": "Same care, same brew time, none of the 3am ceiling staring. Swipe for our decaf menu.", "ctaLine": "Save this for late nights.", "tags": "#decaf #slowcoffee #NOIRafterdark"}, {"tone": "Craft", "cta": "Follow", "format": "Reel", "idea": "Closing routine after the last cup", "hook": "What happens after the last cup.", "body": "Machines cleaned, grinders reset, chairs up. Tomorrow's first pour starts tonight.", "ctaLine": "Follow to see the rest of the night.", "tags": "#behindthebar #baristalife #NOIRafterdark"}, {"tone": "Community", "cta": "DM", "format": "Static", "idea": "Friday listening sessions announcement", "hook": "Friday listening sessions are back.", "body": "One album, played start to finish. Low lights, good coffee, no talking over the good parts.", "ctaLine": "Seats are limited. DM us to save one.", "tags": "#listeningsession #NOIRafterdark #vinylnight"}, {"tone": "Community", "cta": "Tag", "format": "Carousel", "idea": "People of NOIR", "hook": "People of NOIR.", "body": "The regulars who turned a coffee bar into a place. Swipe to meet a few of them.", "ctaLine": "Tag someone you've met here.", "tags": "#peopleofNOIR #thirdplace #cafeculture"}, {"tone": "Community", "cta": "Comment", "format": "Reel", "idea": "Guests pick the album", "hook": "You pick the album. We press play.", "body": "Next Friday's listening session is chosen by you.", "ctaLine": "Drop the album you'd want us to play.", "tags": "#listeningsession #NOIRafterdark #vinylnight"}, {"tone": "Community", "cta": "Tag", "format": "Static", "idea": "Customer photo repost", "hook": "Your corner, your photo.", "body": "Shared by one of our regulars, reposted with love.", "ctaLine": "Tag us in yours for a chance to be featured.", "tags": "#peopleofNOIR #NOIRafterdark #cafeculture"}, {"tone": "Community", "cta": "DM", "format": "Story", "idea": "Question sticker", "hook": "What should we add to the menu?", "body": "We read every reply. The best idea gets brewed.", "ctaLine": "Send us your idea.", "tags": "#NOIRafterdark"}, {"tone": "Community", "cta": "Follow", "format": "Reel", "idea": "One-month recap", "hook": "One month of late nights.", "body": "Thank you for staying up with us. Here's to the next one.", "ctaLine": "Follow along for month two.", "tags": "#NOIRafterdark #thirdplace #coffeebar"}];
+  const TONES = ["Moody", "Warm", "Playful", "Craft", "Community"];
+  const CTAS = ["Save", "Comment", "Share", "Visit / Reserve", "Tag", "Follow", "Vote", "DM"];
+  const FORMATS = ["Reel", "Static", "Carousel", "Story"];
+  const toneColor = t => `var(--${t.toLowerCase()}, var(--ink))`;
+  const state = { tone:"All", cta:"All", format:"All" };
+
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+  const full = c => [c.hook, c.body, c.ctaLine, c.tags].filter(Boolean).join("\n\n");
+
+  // tone chips
+  const tonesEl = document.getElementById("tones");
+  ["All", ...TONES].forEach(t => {
+    const n = t === "All" ? CAPTIONS.length : CAPTIONS.filter(c => c.tone === t).length;
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.tone = t;
+    b.setAttribute("aria-pressed", t === "All");
+    if (t !== "All") b.style.setProperty("--c", toneColor(t));
+    b.innerHTML = (t === "All" ? "" : "<i></i>") + esc(t) + " <small>" + n + "</small>";
+    b.onclick = () => { state.tone = t; render(); };
+    tonesEl.appendChild(b);
+  });
+
+  // selects
+  const fill = (el, opts) => { el.innerHTML = ["All", ...opts].map(o => `<option>${esc(o)}</option>`).join(""); };
+  const ctaEl = document.getElementById("cta"), fmtEl = document.getElementById("format");
+  fill(ctaEl, CTAS); fill(fmtEl, FORMATS);
+  ctaEl.onchange = () => { state.cta = ctaEl.value; render(); };
+  fmtEl.onchange = () => { state.format = fmtEl.value; render(); };
+  document.getElementById("reset").onclick = () => { state.tone = state.cta = state.format = "All"; ctaEl.value = fmtEl.value = "All"; render(); };
+
+  async function copyText(text) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch {
+      const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); const ok = document.execCommand("copy"); ta.remove(); return ok;
+    }
+  }
+
+  function render() {
+    tonesEl.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.tone === state.tone));
+    const list = CAPTIONS.filter(c =>
+      (state.tone === "All" || c.tone === state.tone) &&
+      (state.cta === "All" || c.cta === state.cta) &&
+      (state.format === "All" || c.format === state.format));
+    const grid = document.getElementById("grid");
+    grid.innerHTML = list.map((c, i) => `
+      <li class="card" style="--c:${toneColor(c.tone)}">
+        <div class="meta"><span class="pill tone">${esc(c.tone)}</span><span class="pill">${esc(c.format)}</span><span class="pill">${esc(c.cta)}</span></div>
+        <p class="idea">${esc(c.idea || "")}</p>
+        <p class="hook">${esc(c.hook)}</p>
+        <p class="body">${esc(c.body || "")}</p>
+        <p class="cta">${esc(c.ctaLine || "")}</p>
+        <p class="tags">${esc(c.tags)}</p>
+        <div class="foot"><span class="chars">${full(c).length} characters</span><button class="copy" type="button" data-i="${CAPTIONS.indexOf(c)}">Copy caption</button></div>
+      </li>`).join("");
+    document.getElementById("count").textContent = `Showing ${list.length} of ${CAPTIONS.length} captions`;
+    document.getElementById("empty").hidden = list.length > 0;
+  }
+
+  document.getElementById("grid").addEventListener("click", async e => {
+    const btn = e.target.closest(".copy"); if (!btn) return;
+    const ok = await copyText(full(CAPTIONS[+btn.dataset.i]));
+    btn.textContent = ok ? "Copied" : "Copy failed"; btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "Copy caption"; btn.classList.remove("done"); }, 1600);
+  });
+
+  render();
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canva designs | Sakshee Dahake</title>
+<meta name="description" content="Carousel and Story templates in NOIR's brand style, designed for Canva.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A4B; --wine:#7C1D22; --paper:#FFFFFF; --mist:#E1E5EB; --slate:#566079; --line:#C9D0DC;
+    --gap:clamp(12px,1.6vw,20px);
+    --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+    --script:"Mrs Saint Delafield","Brush Script MT",cursive;
+    --body:"Montserrat",system-ui,sans-serif;
+    --culture:#1E2A4B; --people:#7C1D22; --product:#6E7892; --experience:#B79A8A;
+    --espresso:#1A1614; --crema:#8A5A3B; --milk:#C9B8A6; --pap:#EDE6DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--slate);background:var(--mist);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;border-radius:2px}
+  p{max-width:62ch}
+  .board{max-width:1240px;margin:0 auto;padding:var(--gap);display:grid;gap:var(--gap)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+  .sheet{position:relative;background:var(--paper);border-radius:6px;padding:clamp(24px,3.6vw,46px)}
+  .sheet.soft{background:linear-gradient(140deg,#F8F9FB 0%,#E9EDF2 100%)}
+  .dots{position:absolute;top:12px;left:18px;display:flex;gap:4px}
+  .dots i{width:5px;height:5px;border-radius:50%;background:var(--ink)}
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);line-height:.92;letter-spacing:-.005em}
+  .h2{font-size:clamp(2.4rem,4.8vw,3.8rem)}
+  .h3d{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;letter-spacing:.02em;line-height:1.05}
+  .script{font-family:var(--script);font-weight:400;color:var(--wine);line-height:1}
+  .star{width:26px;height:26px;color:var(--wine);flex:none}
+  .lead{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .head-title{display:flex;align-items:center;gap:12px}
+  .sub{font-size:.88rem;margin-top:10px}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .nav .back{display:inline-flex;align-items:center;gap:8px;border-bottom:1.5px solid var(--ink);padding-bottom:2px;letter-spacing:.06em}
+  .nav .back:hover{color:var(--wine);border-color:var(--wine)}
+  .intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(28px,4vw,52px)}
+  .eyebrow{color:var(--wine);font-weight:600;font-size:.85rem}
+  .title{font-size:clamp(3.2rem,7.6vw,6.4rem)}
+  .title .l1,.title .l2{display:block}
+  .title .script{display:block;width:max-content;margin:-.12em 0 0 .9em;font-size:.62em;text-transform:none;transform:rotate(-6deg);letter-spacing:0}
+  .intro .lead{margin-top:22px}
+  .note{display:inline-flex;margin-top:16px;font-size:.78rem;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px}
+  .stats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stats li{border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.82rem;box-shadow:3px 4px 0 var(--line);background:var(--paper)}
+  .stats b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
+  .actions{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;grid-column:1/-1}
+  .btn{display:inline-block;background:var(--wine);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;padding:12px 20px;border-radius:999px}
+  .btn:hover{background:#63161B}
+  .textlink{font-size:.85rem;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink)}
+  .textlink:hover{color:var(--wine);border-color:var(--wine)}
+  @media (prefers-reduced-motion:no-preference){
+    .title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+    .title .script{animation:sign 1.3s .5s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes sign{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 -10% 0 0)}}
+  }
+
+  .tag{display:inline-flex;align-items:center;font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+  .tag.concept{color:var(--ink)}
+  .tag.spec{color:var(--wine)}
+
+  .filters{display:grid;gap:14px;margin-top:24px;padding:18px;border-radius:8px;background:#F3F5F8}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .chip i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink))}
+  .chip small{font-size:.72rem;opacity:.7}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .chip[aria-pressed="true"] i{box-shadow:0 0 0 2px #fff}
+  .selects{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  .selects label{font-size:.8rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+  select{font:inherit;font-size:.84rem;color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 10px;background:var(--paper)}
+  .count{margin-left:auto;font-size:.82rem;font-weight:600;color:var(--slate)}
+  .reset{font:inherit;font-size:.8rem;font-weight:600;color:var(--wine);background:none;border:0;border-bottom:1.5px solid var(--wine);cursor:pointer}
+  .pill{font-size:.7rem;font-weight:600;border-radius:999px;padding:2px 9px;border:1.5px solid var(--ink);color:var(--ink)}
+
+  .cardgrid{display:grid;gap:14px;margin-top:24px}
+  .cols4{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .box{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:16px;box-shadow:3px 4px 0 var(--line)}
+  .box h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.3rem;line-height:1;letter-spacing:.02em;padding-bottom:10px;margin-bottom:10px;border-bottom:1.5px solid var(--line)}
+  .box p{font-size:.84rem;line-height:1.5;margin-top:8px}
+  .box ul{list-style:none;display:grid;gap:5px;margin-top:8px}
+  .box li{font-size:.82rem;color:var(--ink);background:#EEF1F5;border-radius:4px;padding:5px 8px;line-height:1.35}
+  .num{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--ink)}
+
+  .more{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+  .more a{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:.86rem;border:1.5px solid var(--ink);border-radius:8px;padding:12px 14px;background:var(--paper);box-shadow:3px 4px 0 var(--line)}
+  .more a:hover{color:var(--wine);border-color:var(--wine)}
+  .more small{display:block;font-weight:500;font-size:.74rem;color:var(--slate);margin-top:2px}
+
+  footer{max-width:1240px;margin:0 auto;padding:6px var(--gap) 26px;font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:1000px){
+    .cols4{grid-template-columns:repeat(2,1fr)}
+    .cols3{grid-template-columns:repeat(2,1fr)}
+    .more{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .intro{grid-template-columns:1fr}
+    .nav .me{display:none}
+    .count{margin-left:0;width:100%}
+  }
+  @media (max-width:560px){
+    .cols4,.cols3,.cols2,.more{grid-template-columns:1fr}
+  }
+
+
+  .slides{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+  .stories{display:grid;grid-template-columns:repeat(3,minmax(0,260px));gap:16px;margin-top:24px;justify-content:start}
+  .slide,.story{position:relative;container-type:inline-size;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5cqw;padding:9cqw;box-shadow:3px 4px 0 var(--line)}
+  .slide{aspect-ratio:4/5}
+  .story{aspect-ratio:9/16;padding:10cqw}
+  .esp{background:#1A1614;color:#EDE6DC}.crema{background:#8A5A3B;color:#F4ECE2}.milk{background:#C9B8A6;color:#1A1614}.pap{background:#EDE6DC;color:#1A1614;border:1px solid #D7CDBF}
+  .wm{position:absolute;top:8cqw;left:9cqw;font-size:6.5cqw;font-weight:600;letter-spacing:.35em}
+  .slide b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:15cqw;line-height:.98}
+  .slide span:not(.wm){font-size:8cqw;line-height:1.3;font-weight:500}
+  .slide em{position:absolute;bottom:7cqw;right:9cqw;font-style:normal;font-size:5.5cqw;font-weight:600;opacity:.7}
+  .story small{font-size:6cqw;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  .story b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:12cqw;line-height:1}
+  .stk{display:grid;gap:3cqw;margin-top:4cqw}
+  .stk i{font-style:normal;font-size:6.5cqw;font-weight:600;text-align:center;border-radius:99px;padding:3cqw 4cqw;background:rgba(255,255,255,.92);color:#1A1614}
+  .stk i.q{text-align:left;opacity:.8}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+  .sw div{border-radius:6px;height:78px;padding:10px 12px;display:flex;flex-direction:column;justify-content:flex-end;font-size:.82rem;font-weight:700}
+  .sw small{font-weight:500;font-size:.7rem;opacity:.85}
+  .rules{margin-top:18px;padding-left:20px;display:grid;gap:8px;font-size:.88rem;color:var(--ink)}
+  .rules li::marker{color:var(--wine);font-weight:700}
+  @media (max-width:1000px){.slides{grid-template-columns:repeat(3,1fr)}.stories{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:560px){.slides{grid-template-columns:repeat(2,1fr)}.stories{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 32 32"><g fill="currentColor"><circle cx="16" cy="16" r="6"/><path d="M16 1l2 8h-4zM16 31l-2-8h4zM1 16l8-2v4zM31 16l-8 2v-4zM5.4 5.4l7 4.3-2.8 2.8zM26.6 26.6l-7-4.3 2.8-2.8zM26.6 5.4l-4.3 7-2.8-2.8zM5.4 26.6l4.3-7 2.8 2.8z"/></g></symbol>
+</svg>
+
+<main class="board">
+  <header class="sheet">
+    <nav class="nav" aria-label="Page">
+      <a class="back" href="index.html#proof"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <a class="me" href="index.html">Sakshee Dahake</a>
+    </nav>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Proof of work</p>
+        <h1 class="display title"><span class="l1">Canva</span> <span class="l2">designs<span class="script" aria-hidden="true">Noir</span></span></h1>
+        <p class="lead">Carousel and Story templates in a brand style, built so anyone on the team can make a post that looks like NOIR.</p>
+        <span class="note">Template mockups for NOIR, the concept café brand from case study 01</span>
+      </div>
+      <ul class="stats"><li><b>5</b>carousel slides</li><li><b>3</b>Story templates</li><li><b>4</b>brand colours</li><li><b>6</b>layout rules</li></ul>
+      <div class="actions"><a class="btn" href="content-calendar.html">See the content calendar</a><a class="textlink" href="index.html#work">See the NOIR case study</a></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-labelledby="car-h"><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="car-h">Carousel template</h2></div><p>The first-timer's guide from the caption bank, laid out as five slides. Same grid, colours rotate.</p></div><div class="slides"><figure class="slide esp"><span class="wm">NOIR</span><b>First time at NOIR?</b><span>Here's how to do it right.</span><em>1 / 5</em></figure><figure class="slide crema"><span class="wm">NOIR</span><b>1.</b><span>Order something slow.</span><em>2 / 5</em></figure><figure class="slide milk"><span class="wm">NOIR</span><b>2.</b><span>Pick a corner.</span><em>3 / 5</em></figure><figure class="slide pap"><span class="wm">NOIR</span><b>3.</b><span>Put your phone down for ten minutes.</span><em>4 / 5</em></figure><figure class="slide esp"><span class="wm">NOIR</span><b>4.</b><span>Stay longer than you planned.</span><em>5 / 5</em></figure></div></section>
+  <section class="sheet soft" aria-labelledby="story-h"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><div class="head"><div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="story-h">Story templates</h2></div><p>Three reusable layouts for the Story formats in the calendar.</p></div><div class="stories"><figure class="story esp"><span class="wm">NOIR</span><small>Poll</small><b>Espresso or cold brew at midnight?</b><div class="stk"><i>Espresso</i><i>Cold brew</i></div></figure><figure class="story milk"><span class="wm">NOIR</span><small>Question</small><b>What should we add to the menu?</b><div class="stk"><i class='q'>Type something...</i></div></figure><figure class="story crema"><span class="wm">NOIR</span><small>Announcement</small><b>Open till 1am.</b><div class="stk"><i>See you after dark</i></div></figure></div></section>
+  <div class="row">
+    <section class="sheet" aria-labelledby="brand-h"><h2 class="display h2" id="brand-h">Brand style</h2>
+      <div class="sw"><div style="background:#1A1614;color:#EDE6DC"><span>Espresso</span><small>#1A1614</small></div><div style="background:#8A5A3B;color:#F4ECE2"><span>Crema</span><small>#8A5A3B</small></div><div style="background:#C9B8A6;color:#1A1614"><span>Steamed milk</span><small>#C9B8A6</small></div><div style="background:#EDE6DC;color:#1A1614"><span>Paper</span><small>#EDE6DC</small></div></div>
+      <p class="sub"><b style="color:var(--ink)">Type in these mockups.</b> Wordmark in Montserrat Medium with wide tracking. Headlines in Anton. Supporting lines in Montserrat.</p></section>
+    <section class="sheet" aria-labelledby="lay-h"><h2 class="display h2" id="lay-h">Layout rules</h2><ol class="rules"><li>One idea per slide, twelve words at most.</li><li>Wordmark top left on every slide, in the same place.</li><li>Slide 1 asks the question. The last slide gives the call to action.</li><li>Stories: keep the top and bottom 14% free of text so nothing sits under the interface.</li><li>Light text on dark colours, dark text on light colours. No mixing.</li><li>Swap colours every slide, but only within the palette.</li></ol></section>
+  </div>
+
+
+  <section class="sheet soft" aria-labelledby="more-h">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="head-title"><svg class="star"><use href="#star"/></svg><h2 class="display h2" id="more-h">More proof of work</h2></div>
+    <ul class="more"><li><a href="content-calendar.html">Content calendar<small>A month of posts by pillar and format</small></a></li><li><a href="competitor-analysis.html">Competitor analysis<small>How similar brands post, and the gaps</small></a></li><li><a href="positioning-framework.html">Positioning framework<small>Audience, need, promise and proof</small></a></li><li><a href="reel-storyboard.html">Reel storyboard<small>Shot list, on-screen text and audio</small></a></li><li><a href="caption-bank.html">Caption bank<small>30 captions by tone and CTA</small></a></li><li><a href="social-media-audit.html">Social media audit<small>Feed review with quick fixes</small></a></li><li><a href="campaign-brief.html">Campaign brief<small>Objective, audience, idea, deliverables</small></a></li></ul>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> Sakshee Dahake</span>
+  <a href="index.html#proof">Back to portfolio</a>
+</footer>
+
+<script>
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
